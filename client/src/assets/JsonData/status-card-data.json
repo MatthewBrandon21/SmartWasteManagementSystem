@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "bx bx-user-circle",
+        "count": "3",
+        "title": "admin"
+    },
+    {
+        "icon": "bx bx-user",
+        "count": "4561",
+        "title": "employee"
+    },
+    {
+        "icon": "bx bx-trash",
+        "count": "256",
+        "title": "trash"
+    },
+    {
+        "icon": "bx bxs-trash",
+        "count": "23",
+        "title": "full trash"
+    }
+]

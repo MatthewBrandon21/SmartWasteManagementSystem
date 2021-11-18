@@ -1,0 +1,27 @@
+[
+    {
+        "display_name": "Dashboard",
+        "route": "/",
+        "icon": "bx bx-category-alt"
+    },
+    {
+        "display_name": "Admin",
+        "route": "/admin",
+        "icon": "bx bx-user"
+    },
+    {
+        "display_name": "Employee",
+        "route": "/employee",
+        "icon": "bx bx-user-circle"
+    },
+    {
+        "display_name": "Trash",
+        "route": "/trash",
+        "icon": "bx bx-trash"
+    },
+    {
+        "display_name": "Maps",
+        "route": "/maps",
+        "icon": "bx bx-map-alt"
+    }
+]

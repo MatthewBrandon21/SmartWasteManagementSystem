@@ -1,0 +1,110 @@
+body {
+  background-color: var(--second-bg);
+}
+
+.login {
+  top: 0;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+}
+
+.login__logo {
+  height: 15rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__logo > img {
+  height: 25rem;
+}
+
+.login__item {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 10rem;
+  border: 1px dashed var(--main-color);
+  border-bottom: none;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  color: var(--txt-color);
+  padding: 3rem;
+}
+
+.login__item > h1 {
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+/* .login__item-inner {
+  padding: var(--sidebar-icon-p);
+  align-items: center;
+  font-weight: 600;
+  transition: color 0.3s ease 0s;
+}
+
+.login__item-inner > i {
+  margin-right: 10px;
+  font-size: var(--sidebar-icon-size);
+}
+
+.login__item-inner > span {
+  text-transform: capitalize;
+}
+
+.login__item-inner:hover {
+  color: var(--main-color);
+} */
+
+.login__input > input {
+  width: 50%;
+  height: 40px;
+  padding: 1rem;
+  margin-bottom: 30px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border: 0.1px solid var(--main-bg);
+  border-radius: 15px;
+  transition: 0.3s;
+  align-items: center;
+}
+
+.login__input > input:focus {
+  outline: none;
+  color: var(--txt-color);
+  border: 0.1px solid #d8d8d8;
+  background-color: #f6f6f6;
+  transform: scale(1.1);
+}
+
+.login__input > i {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 20px;
+  opacity: 0.5;
+}
+
+.login__input-btn > input {
+  background-image: linear-gradient(
+    to right,
+    var(--second-color) 50%,
+    var(--second-color) 50%,
+    #6ad53c
+  );
+  background-size: 200%;
+  transition: 0.5s;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  color: var(--txt-white);
+}
+
+.login__input-btn > input:hover {
+  background-position: 100% 10%;
+}

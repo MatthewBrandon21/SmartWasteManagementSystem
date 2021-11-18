@@ -1,0 +1,110 @@
+:root {
+  --carousel-icon: flex;
+  --carousel-icon-size: 12rem;
+  --carousel-iconn: none;
+  --carousel-title: 1.5rem;
+  --carousel-txt: 15px;
+  --carousel-info-ml: 3rem;
+  --carousel-info-align: left;
+  --carousel-box: 30px;
+  --carousel-box-mb: 30px;
+}
+
+@media only screen and (max-width: 1470px) {
+  :root {
+    --carousel-icon-size: 10rem;
+    --carousel-title: 1.2rem;
+    --carousel-txt: 13px;
+  }
+}
+
+@media only screen and (max-width: 1370px) {
+  :root {
+    --carousel-icon-size: 9rem;
+    --carousel-title: 1rem;
+    --carousel-txt: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --carousel-icon: none;
+    --carousel-iconn: block;
+    --carousel-iconn-size: 5rem;
+    --carousel-info-ml: 0rem;
+    --carousel-info-align: center;
+    --carousel-h: 20rem;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  :root {
+    --carousel-info-ml: 0;
+    --carousel-box: 0;
+    --carousel-box-mb: 10px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  :root {
+    --carousel-iconn-size: 3rem;
+    --carousel-title: 0.85rem;
+    --carousel-txt: 11px;
+  }
+}
+
+.carousel-box {
+  padding: var(--carousel-box);
+  margin-bottom: var(--carousel-box-mb);
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.carousel-content {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px dashed var(--main-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  min-height: var(--carousel-h);
+}
+
+.carousel__iconn {
+  width: 30%;
+  height: 100%;
+  font-size: var(--carousel-icon-size);
+  display: var(--carousel-icon);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-left: 1rem;
+}
+
+.carousel__infoo {
+  flex-grow: 1;
+  text-align: var(--carousel-info-align);
+  margin-left: var(--carousel-info-ml);
+  z-index: 1;
+  text-transform: capitalize;
+}
+
+.carousel__infoo > h1 {
+  font-size: var(--carousel-title);
+  margin-bottom: 10px;
+}
+
+.carousel__infoo > li {
+  font-size: var(--carousel-txt);
+  list-style-type: none;
+}
+
+.carousel__infoo > i {
+  display: var(--carousel-iconn);
+  font-size: var(--carousel-iconn-size);
+  margin-bottom: 1rem;
+}
