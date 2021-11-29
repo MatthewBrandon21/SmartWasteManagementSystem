@@ -55,7 +55,7 @@ const Dashboard = () => {
 
     const post = useSelector((state) => state.postReducer) 
 
-    console.log(postReducer)
+    console.log(post)
 
     return (
         <div>
