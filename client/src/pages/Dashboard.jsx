@@ -8,6 +8,7 @@ import Table from '../components/table/Table';
 import Badge from '../components/badge/Badge';
 import Carousel from '../components/carousel/Carousel';
 import statusCards from '../assets/JsonData/status-card-data.json';
+import postReducer from '../redux/reducers/Post';
 
 
 const topCustomers = {
@@ -51,6 +52,10 @@ const renderCusomerBody = (item, index) => (
 )
 
 const Dashboard = () => {
+
+    const post = useSelector((state) => state.postReducer) 
+
+    console.log(postReducer)
 
     return (
         <div>

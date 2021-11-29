@@ -1,25 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals'
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
 
-import { createStore } from 'redux'
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 
-import { Provider } from 'react-redux'
+import Reducers from "./redux/reducers";
 
-import rootReducer from './redux/reducers'
+import "./assets/boxicons-2.0.7/css/boxicons.min.css";
+import "./assets/css/grid.css";
+import "./assets/css/theme.css";
+import "./assets/css/index.css";
 
-import './assets/boxicons-2.0.7/css/boxicons.min.css'
-import './assets/css/grid.css'
-import './assets/css/theme.css'
-import './assets/css/index.css'
+import Layout from "./components/layout/Layout";
 
-import Layout from './components/layout/Layout'
+const store = createStore(Reducers, compose(applyMiddleware(thunk)));
 
-const store = createStore(
-  rootReducer
-)
-
-document.title = 'SWMS | Smart Waste Management System'
+document.title = "SWMS | Smart Waste Management System";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -27,7 +25,7 @@ ReactDOM.render(
       <Layout />
     </React.StrictMode>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

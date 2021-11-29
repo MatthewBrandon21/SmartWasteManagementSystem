@@ -6,8 +6,11 @@ import Login from '../login/Login';
 import Routes from '../Routes';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ThemeAction from '../../redux/actions/ThemeAction';
 import './layout.css';
+
+// redux
+import ThemeAction from '../../redux/actions/ThemeAction';
+import { getPost } from '../../redux/actions/Post';
 
 
 const Layout = () => {
@@ -17,13 +20,17 @@ const Layout = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        // theme_menu
         const themeClass = localStorage.getItem('themeMode', 'theme-mode-light')
 
         const colorClass = localStorage.getItem('colorMode', 'theme-mode-light')
 
         dispatch(ThemeAction.setMode(themeClass))
-
+        
         dispatch(ThemeAction.setColor(colorClass))
+
+        // post
+        dispatch(getPost())
     }, [dispatch])
 
     return (

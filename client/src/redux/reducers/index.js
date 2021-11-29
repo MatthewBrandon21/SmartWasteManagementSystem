@@ -1,6 +1,7 @@
-import ThemeReducer from "./ThemeReducer"
-import { combineReducers } from "redux"
+import { combineReducers } from "redux";
+import ThemeReducer from "./ThemeReducer";
+import postReducer from "./Post";
 
-const rootReducer = combineReducers({ThemeReducer})
+const Reducers = combineReducers({ ThemeReducer, postReducer });
 
-export default rootReducer
+export default Reducers;
