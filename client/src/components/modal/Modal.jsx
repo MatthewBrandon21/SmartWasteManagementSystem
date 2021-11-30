@@ -4,26 +4,9 @@ import './modal.css';
 
 const Modal = props => {
 
-
-    const closeOnEsc = (close) => {
-        if ((close.charCode || close.keyCode) === 27) {
-            props.close()
-        }
-    }
-
-
     if (!props.show) {
         return null
     }
-
-
-    useEffect(() => {
-        document.body.addEventListener('keydown', closeOnEsc)
-        return function cleanup() {
-            document.body.removeEventListener('keydown', closeOnEsc)
-        }
-    }, [])
-
 
     return (
         <div className="modal" onClick={props.close}>
