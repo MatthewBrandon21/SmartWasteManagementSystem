@@ -1,14 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
-import Chart from 'react-apexcharts';
 import { useSelector } from 'react-redux';
 import StatusCard from '../components/status-card/StatusCard';
 import Table from '../components/table/Table';
-import Badge from '../components/badge/Badge';
 import Carousel from '../components/carousel/Carousel';
-import statusCards from '../assets/JsonData/status-card-data.json';
-import postReducer from '../redux/reducers/Post';
 
 
 const topCustomers = {
@@ -53,34 +49,70 @@ const renderCusomerBody = (item, index) => (
 
 const Dashboard = () => {
 
-    const post = useSelector((state) => state.postReducer) 
+    const user = useSelector((state) => state.User);
 
-    console.log(post)
+        console.log(user)
 
     return (
         <div>
             <h2 className="page-header">
-                <Icon icon="bx:bxs-category-alt"/> Dashboard
+                <Icon icon="bx:bxs-category-alt" /> Dashboard
             </h2>
 
             <div className="row">
-                
+
                 <div className="col-6">
                     <div className="row">
-                        {
+                        {/* {
                             statusCards.map((item, index) => (
                                 <div className="col-6" key={index}>
                                     <StatusCard
                                         icon={item.icon}
-                                        count={item.count}
+                                        count={post.count}
                                         title={item.title}
                                     />
                                 </div>
                             ))
-                        }
+                        } */}
+
+                        {/* ADMIN */}
+                        <div className="col-6">
+                            <StatusCard
+                                icon="bx bx-user-circle"
+                                count={user.length}
+                                title="admin"
+                            />
+                        </div>
+
+                        {/* EMPLOYEE */}
+                        <div className="col-6">
+                            <StatusCard
+                                icon="bx bx-user"
+                                count={user.length+3315}
+                                title="employee"
+                            />
+                        </div>
+
+                        {/* TRASH */}
+                        <div className="col-6">
+                            <StatusCard
+                                icon="bx bx-trash"
+                                count="3415"
+                                title="trash"
+                            />
+                        </div>
+
+                        {/* TRASH_FULL */}
+                        <div className="col-6">
+                              <StatusCard
+                                icon="bx bxs-trash"
+                                count="22"
+                                title="full trash"
+                            />
+                        </div>
                     </div>
                 </div>
-                
+
                 <div className="col-6">
                     <div className="card">
                         <div className="card__header">
@@ -111,7 +143,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )

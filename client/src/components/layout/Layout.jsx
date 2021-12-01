@@ -10,7 +10,7 @@ import './layout.css';
 
 // redux
 import ThemeAction from '../../redux/actions/ThemeAction';
-import { getPost } from '../../redux/actions/Post';
+import { getUser } from '../../redux/actions/User';
 
 
 const Layout = () => {
@@ -29,8 +29,9 @@ const Layout = () => {
         
         dispatch(ThemeAction.setColor(colorClass))
 
-        // post
-        dispatch(getPost())
+        // users
+        dispatch(getUser())
+
     }, [dispatch])
 
     return (
@@ -45,7 +46,6 @@ const Layout = () => {
                             <Routes />
                         </div>
                         <FooterC />
-
                     </div>
                 </div>
             )} />

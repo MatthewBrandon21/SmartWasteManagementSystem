@@ -27,7 +27,7 @@ db.mongoose
 
 app.get("/", (req, res) => {
   res.json({
-    message: "welcome",
+    message: "Welcome to Smart Waste Management System (SWMS)",
   });
 });
 

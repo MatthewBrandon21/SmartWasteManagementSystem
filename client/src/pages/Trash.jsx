@@ -42,7 +42,7 @@ const Trash = () => {
     return (
         <div>
             <h2 className="page-header">
-                <Icon icon="bx:bxs-trash" /> teeeraaash
+                <Icon icon="bx:bxs-trash" /> Trash
             </h2>
 
             <div className="row">

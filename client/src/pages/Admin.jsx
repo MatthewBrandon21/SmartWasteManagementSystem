@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import Table from '../components/table/Table'
 import Modal from '../components/modal/Modal'
 import { Icon } from '@iconify/react';
@@ -17,15 +18,19 @@ const renderHead = (item, index) => <th key={index}>{item}</th>
 
 const renderBody = (item, index) => (
     <tr key={index}>
-        <td>{item.id}</td>
-        <td>{item.name}</td>
-        <td>{item.email}</td>
-        <td>{item.phone}</td>
-        <td>{item.location}</td>
+        <td>{index + 1}</td>
+        <td>{item.admin_nama}</td>
+        <td>{item.admin_email}</td>
+        <td>+62{item.admin_phonenum}</td>
+        <td>{item.admin_location}</td>
     </tr>
 )
 
 const Admin = () => {
+
+    const user = useSelector((state) => state.User)
+
+    console.log(user)
 
     const [show, setShow] = useState(false);
 
@@ -67,10 +72,10 @@ const Admin = () => {
                     <div className="card">
                         <div className="card__body">
                             <Table
-                                limit='5'
+                                limit='4'
                                 headData={adminTableHead}
                                 renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={adminList}
+                                bodyData={user}
                                 renderBody={(item, index) => renderBody(item, index)}
                             />
                         </div>
