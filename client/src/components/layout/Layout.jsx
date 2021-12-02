@@ -11,6 +11,7 @@ import './layout.css';
 // redux
 import ThemeAction from '../../redux/actions/ThemeAction';
 import { getUser } from '../../redux/actions/User';
+import { getTrash } from '../../redux/actions/Trash';
 
 
 const Layout = () => {
@@ -21,18 +22,21 @@ const Layout = () => {
 
     useEffect(() => {
         // theme_menu
-        const themeClass = localStorage.getItem('themeMode', 'theme-mode-light')
+        const themeClass = localStorage.getItem('themeMode', 'theme-mode-light');
 
-        const colorClass = localStorage.getItem('colorMode', 'theme-mode-light')
+        const colorClass = localStorage.getItem('colorMode', 'theme-mode-light');
 
-        dispatch(ThemeAction.setMode(themeClass))
-        
-        dispatch(ThemeAction.setColor(colorClass))
+        dispatch(ThemeAction.setMode(themeClass));
+
+        dispatch(ThemeAction.setColor(colorClass));
 
         // users
-        dispatch(getUser())
+        dispatch(getUser());
 
+        // trash
+        dispatch(getTrash());
     }, [dispatch])
+
 
     return (
         <BrowserRouter>

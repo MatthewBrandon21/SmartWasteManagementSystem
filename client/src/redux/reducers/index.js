@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import User from "./User";
 import ThemeReducer from "./ThemeReducer";
+import User from "./User";
+import Trash from "./Trash";
 
-export default combineReducers({ User, ThemeReducer })
+export default combineReducers({ ThemeReducer, User, Trash });

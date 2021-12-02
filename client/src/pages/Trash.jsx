@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import Table from '../components/table/Table'
 import Carousel from '../components/carousel/Carousel';
 import Modal from '../components/modal/Modal'
@@ -6,23 +7,27 @@ import { Icon } from '@iconify/react';
 import employeeList from '../assets/JsonData/employee-list.json'
 
 
-const employeeTableHead = [
+const trashTableHead = [
     '',
     'name',
-    'email',
-    'phone',
-    'location'
+    'type',
+    'location',
+    'region',
+    'max capacity',
+    'current capacity'
 ]
 
 const renderHead = (item, index) => <th key={index}>{item}</th>
 
 const renderBody = (item, index) => (
     <tr key={index}>
-        <td>{item.id}</td>
-        <td>{item.name}</td>
-        <td>{item.email}</td>
-        <td>{item.phone}</td>
-        <td>{item.location}</td>
+        <td>{index + 1}</td>
+        <td>{item.tempat_sampah_name}</td>
+        <td>{item.tempat_sampah_jenis}</td>
+        <td>{item.tempat_sampah_location}</td>
+        <td>{item.tempat_sampah_region}</td>
+        <td>{item.tempat_sampah_maxcapacity} kg</td>
+        <td>{item.tempat_sampah_current.tempat_sampah_currentcapacity} kg</td>
     </tr>
 )
 
@@ -38,6 +43,7 @@ const Trash = () => {
         }
     }, [show]);
 
+    const trash = useSelector(state => state.Trash);
 
     return (
         <div>
@@ -59,19 +65,24 @@ const Trash = () => {
                                 <form>
                                     <div>
                                         <input type="text" value="idsampah" hidden />
-                                        <input type="text" value="nama" hidden />
                                         <input type="number" value={0} hidden />
                                         <input value={false} hidden />
+                                        <div className="input">
+                                            <input type="text" placeholder="Name"/>
+                                        </div>
                                         <div className="input">
                                             <select>
                                                 <option selected="true" hidden>Type</option>
                                                 <option value="Organic">Organic</option>
-                                                <option value="Non-Organic">Non-Organic</option>
+                                                <option value="Non-Organic">non-organic</option>
                                             </select>
                                         </div>
                                         <div className="input">
+                                            <input type="text" placeholder="Location" />
+                                        </div>
+                                        <div className="input">
                                             <select>
-                                                <option selected="true" hidden>Location</option>
+                                                <option selected="true" hidden>Region</option>
                                                 <option value="BSD">BSD</option>
                                                 <option value="Serpong">Serpong</option>
                                                 <option value="Tangerang">Tangerang</option>
@@ -79,17 +90,9 @@ const Trash = () => {
                                         </div>
                                         <div className="input">
                                             <select>
-                                                <option selected="true" hidden>Region</option>
-                                                <option value="A1">A1</option>
-                                                <option value="A2">A2</option>
-                                            </select>
-                                        </div>
-                                        <div className="input">
-                                            <select>
                                                 <option selected="true" hidden>Max Capacity</option>
                                                 <option value={10}>10</option>
                                                 <option value={20}>20</option>
-                                                <option value={30}>30</option>
                                             </select>
                                         </div>
                                     </div>
@@ -104,14 +107,14 @@ const Trash = () => {
                 <div className="col-12">
                     <div className="card card-bg">
                         <div className="card__header">
-                            <h3><Icon icon="bx:bx-trash-alt" /> trash profile</h3><sub>~ location</sub>
+                            <h3><Icon icon="bx:bx-trash-alt" /> trash profile</h3><sub>~ region</sub>
                         </div>
                         <div className="search">
                             <input type="text" placeholder='search here...' />
                             <i className='bx bx-search'></i>
                         </div>
                         <div className="card__body">
-                            <Carousel />
+                            <Carousel data={trash} />
                         </div>
                     </div>
                 </div>
@@ -121,9 +124,9 @@ const Trash = () => {
                         <div className="card__body">
                             <Table
                                 limit='5'
-                                headData={employeeTableHead}
+                                headData={trashTableHead}
                                 renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={employeeList}
+                                bodyData={trash}
                                 renderBody={(item, index) => renderBody(item, index)}
                             />
                         </div>

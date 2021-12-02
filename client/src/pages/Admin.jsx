@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Table from '../components/table/Table'
 import Modal from '../components/modal/Modal'
 import { Icon } from '@iconify/react';
-import adminList from '../assets/JsonData/admin-list.json'
+// import adminList from '../assets/JsonData/admin-list.json'
 
 
 const adminTableHead = [

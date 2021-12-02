@@ -7,34 +7,10 @@ import Table from '../components/table/Table';
 import Carousel from '../components/carousel/Carousel';
 
 
-const topCustomers = {
-    head: [
-        'location',
-        'total trash'
-    ],
-    body: [
-        {
-            "username": "angrek5",
-            "order": "49034"
-        },
-        {
-            "username": "melati2",
-            "order": "69034"
-        },
-        {
-            "username": "mawar1",
-            "order": "69034"
-        },
-        {
-            "username": "bugenvil2",
-            "order": "69034"
-        },
-        {
-            "username": "permai1",
-            "order": "23122"
-        }
-    ]
-}
+const topTrashs = [
+    'name',
+    'total trash'
+]
 
 const renderCusomerHead = (item, index) => (
     <th key={index}>{item}</th>
@@ -42,16 +18,22 @@ const renderCusomerHead = (item, index) => (
 
 const renderCusomerBody = (item, index) => (
     <tr key={index}>
-        <td>{item.username}</td>
-        <td>{item.order}</td>
+        <td style={{ textTransform: "capitalize" }}>{item.tempat_sampah_name}</td>
+        <td>{item.tempat_sampah_totalcapacitythismonth} kg</td>
     </tr>
 )
 
 const Dashboard = () => {
 
-    const user = useSelector((state) => state.User);
+    const user = useSelector(state => state.User);
+    const trash = useSelector(state => state.Trash);
 
-        console.log(user)
+    const sortedTrash = trash.sort((a, b) => b.tempat_sampah_totalcapacitythismonth - a.tempat_sampah_totalcapacitythismonth);
+
+    console.log(user);
+    console.log(trash);
+
+    // console.log(trash.filter(item => item.tempat_sampah_jenis=='anorganik'));
 
     return (
         <div>
@@ -88,7 +70,7 @@ const Dashboard = () => {
                         <div className="col-6">
                             <StatusCard
                                 icon="bx bx-user"
-                                count={user.length+3315}
+                                count={user.length + 3315}
                                 title="employee"
                             />
                         </div>
@@ -97,16 +79,16 @@ const Dashboard = () => {
                         <div className="col-6">
                             <StatusCard
                                 icon="bx bx-trash"
-                                count="3415"
+                                count={trash.length}
                                 title="trash"
                             />
                         </div>
 
                         {/* TRASH_FULL */}
                         <div className="col-6">
-                              <StatusCard
+                            <StatusCard
                                 icon="bx bxs-trash"
-                                count="22"
+                                count={trash.filter(item => item.tempat_sampah_isfull == true).length}
                                 title="full trash"
                             />
                         </div>
@@ -120,9 +102,9 @@ const Dashboard = () => {
                         </div>
                         <div className="card__body">
                             <Table
-                                headData={topCustomers.head}
+                                headData={topTrashs}
                                 renderHead={(item, index) => renderCusomerHead(item, index)}
-                                bodyData={topCustomers.body}
+                                bodyData={sortedTrash.slice(0, 5)}
                                 renderBody={(item, index) => renderCusomerBody(item, index)}
                             />
                         </div>
@@ -132,14 +114,14 @@ const Dashboard = () => {
                 <div className="col-7 trash-card-dashboard">
                     <div className="card card-bg">
                         <div className="card__header">
-                            <h3><Icon icon="bx:bx-trash-alt" /> trash profile</h3><sub>~ location</sub>
+                            <h3><Icon icon="bx:bx-trash-alt" /> trash profile</h3><sub>~ region</sub>
                         </div>
                         <div className="search">
                             <input type="text" placeholder='search here...' />
                             <i className='bx bx-search'></i>
                         </div>
                         <div className="card__body">
-                            <Carousel />
+                            <Carousel data={trash}/>
                         </div>
                     </div>
                 </div>

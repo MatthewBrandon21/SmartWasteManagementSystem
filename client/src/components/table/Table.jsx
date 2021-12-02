@@ -48,7 +48,7 @@ const Table = props => {
                         props.bodyData && props.renderBody ? (
                             <tbody>
                                 {
-                                    props.bodyData.map((item, index) => props.renderBody(item, index))
+                                    dataShow.map((item, index) => props.renderBody(item, index))
                                 }
                             </tbody>
                         ) : null

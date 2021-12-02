@@ -1,12 +1,12 @@
-import * as api from '../../api';
+import * as api from "../../api";
 
 // actions
 export const getUser = () => async (dispatch) => {
   try {
     const { data } = await api.fetchUser();
 
-    dispatch({ type: 'FETCH_ALL', payload: data });
+    dispatch({ type: "FETCH_ALL_USER", payload: data });
   } catch (error) {
     console.log(error.message);
   }
-}
+};

@@ -31,65 +31,40 @@ const settings = {
   slidesToScroll: 1
 };
 
-const Carousel = () => {
+const Carousel = props => {
 
   return (
     <SliderButton>
       <div className="carousel-box">
         <Slider {...settings}>
 
-          <div className="col-6">
-            <div className='carousel-content'>
-              <div className="carousel__iconn">
-                <i className="bx bx-trash"></i>
+          {
+            props.data.map((item, index) => (
+              <div className="col-6" key={index}>
+                <div className='carousel-content'>
+                  <div className="carousel__iconn">
+                    <i className={item.tempat_sampah_isfull == true ? "bx bxs-trash" : "bx bx-trash"}></i>
+                  </div>
+                  <div className="carousel__infoo">
+                    <i className={item.tempat_sampah_isfull == true ? "bx bxs-trash" : "bx bx-trash"}></i>
+                    <h1>{item.tempat_sampah_name}</h1>
+                    <br />
+                    <li>Region : {item.tempat_sampah_region}</li>
+                    {/* <li>Location : {item.tempat_sampah_location}</li> */}
+                    <li>Type : {item.tempat_sampah_jenis}</li>
+                    <li>Current weight : {item.tempat_sampah_current.tempat_sampah_currentcapacity} kg</li>
+                    <li>Max capacity : {item.tempat_sampah_maxcapacity} kg</li>
+                    <br />
+                    {
+                      item.tempat_sampah_isfull == true ? (
+                        <li><b>[[READY]]</b></li>
+                      ) : null
+                    }
+                  </div>
+                </div>
               </div>
-              <div className="carousel__infoo">
-                <i className="bx bx-trash"></i>
-                <h1>Anggrek3</h1>
-                <br />
-                <li>Id : 519</li>
-                <li>Type : Organic</li>
-                <li>Current weight : 5 kg</li>
-                <li>Max capacity : 50 kg</li>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-6">
-            <div className='carousel-content'>
-              <div className="carousel__iconn">
-                <i className="bx bxs-trash"></i>
-              </div>
-              <div className="carousel__infoo">
-                <i className="bx bxs-trash"></i>
-                <h1>Anggrek3</h1>
-                <br />
-                <li>Id : 519</li>
-                <li>Type : Organic</li>
-                <li>Current weight : 5 kg</li>
-                <li>Max capacity : 50 kg</li>
-                <br />
-                <li><b>[[READY]]</b></li>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-6">
-            <div className='carousel-content'>
-              <div className="carousel__iconn">
-                <i className="bx bx-trash"></i>
-              </div>
-              <div className="carousel__infoo">
-                <i className="bx bx-trash"></i>
-                <h1>Anggrek3</h1>
-                <br />
-                <li>Id : 519</li>
-                <li>Type : Organic</li>
-                <li>Current weight : 5 kg</li>
-                <li>Max capacity : 50 kg</li>
-              </div>
-            </div>
-          </div>
+            ))
+          }
 
         </Slider>
       </div>
