@@ -6,6 +6,7 @@ import Dashboard from '../pages/Dashboard'
 import Admin from '../pages/Admin'
 import Employee from '../pages/Employee'
 import Trash from '../pages/Trash'
+import Maps from '../pages/Maps'
 
 const Routes = () => {
     return (
@@ -14,6 +15,7 @@ const Routes = () => {
             <Route path='/admin' component={Admin}/>
             <Route path='/employee' component={Employee}/>
             <Route path='/trash' component={Trash}/>
+            <Route path='/maps' component={Maps}/>
         </Switch>
     )
 }

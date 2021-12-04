@@ -75,6 +75,13 @@
   --table-align: left;
   --table-tr-h: 1rem;
 
+  /* login */
+  --login-logo-h: 15rem;
+  --login-logo-size: 25rem;
+  --login-m: 0 15rem;
+  --login-item-w: 50%;
+  --login-item-p: 3rem;
+
   /* footer */
   --txt-size-footer: 1rem;
 }
@@ -106,8 +113,19 @@
     --table-align: center;
     --table-tr-h: 3.65rem;
 
+    /* login */
+    --login-item-w: 70%;
+    --login-item-p: 1rem 1rem 3rem 1rem;
+
     /* footer */
     --txt-size-footer: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  :root {
+    /* login */
+    --login-m: 0 7rem;
   }
 }
 
@@ -148,8 +166,21 @@
     --pl-welcome: 3rem;
     --pr-welcome: 1rem;
 
+    /* login */
+    --login-logo-size: 20rem;
+    --login-item-w: 80%;
+    --login-m: 0rem;
+
     /* footer */
     --txt-size-footer: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  :root {
+    /* login */
+    --login-logo-h: 10rem;
+    --login-logo-size: 15rem;
   }
 }
 
@@ -367,7 +398,8 @@ select {
   margin-top: var(--trash-card-mt);
 }
 
-.input > input, select {
+.input > input,
+select {
   width: 60%;
   height: 40px;
   padding: 0 1rem;
@@ -393,7 +425,8 @@ select {
   align-items: center;
 } */
 
-.input > input:focus, select:focus {
+.input > input:focus,
+select:focus {
   outline: none;
   color: var(--txt-color);
   background-color: #f6f6f6;

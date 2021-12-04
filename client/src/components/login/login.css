@@ -4,15 +4,14 @@ body {
 
 .login {
   top: 0;
-  margin-left: 15rem;
-  margin-right: 15rem;
+  margin: var(--login-m);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   background-color: var(--main-bg);
   box-shadow: var(--box-shadow);
 }
 
 .login__logo {
-  height: 15rem;
+  height: var(--login-logo-h);
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -20,11 +19,11 @@ body {
 }
 
 .login__logo > img {
-  height: 25rem;
+  height: var(--login-logo-size);
 }
 
 .login__item {
-  width: 50%;
+  width: var(--login-item-w);
   margin: auto;
   margin-bottom: 10rem;
   border: 1px dashed var(--main-color);
@@ -33,7 +32,7 @@ body {
   box-shadow: var(--box-shadow);
   text-align: center;
   color: var(--txt-color);
-  padding: 3rem;
+  padding: var(--login-item-p);
 }
 
 .login__item > h1 {

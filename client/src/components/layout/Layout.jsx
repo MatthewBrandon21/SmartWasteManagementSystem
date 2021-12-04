@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Sidebar from '../sidebar/Sidebar';
 import TopNav from '../topnav/TopNav';
 import FooterC from '../footer/FooterC';
-import Login from '../login/Login';
 import Routes from '../Routes';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -40,7 +39,6 @@ const Layout = () => {
 
     return (
         <BrowserRouter>
-            {/* <Login /> */}
             <Route render={(props) => (
                 <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
                     <Sidebar {...props} />

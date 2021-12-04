@@ -105,7 +105,7 @@ const Trash = () => {
                 </div>
 
                 <div className="col-12">
-                    <div className="card card-bg">
+                    <div className="card">
                         <div className="card__header">
                             <h3><Icon icon="bx:bx-trash-alt" /> trash profile</h3><sub>~ region</sub>
                         </div>

@@ -12,6 +12,7 @@ import "./assets/css/grid.css";
 import "./assets/css/theme.css";
 import "./assets/css/index.css";
 
+import Login from "./components/login/Login";
 import Layout from "./components/layout/Layout";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
@@ -21,13 +22,11 @@ document.title = "SWMS | Smart Waste Management System";
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
+      {/* <Login /> */}
       <Layout />
     </React.StrictMode>
   </Provider>,
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

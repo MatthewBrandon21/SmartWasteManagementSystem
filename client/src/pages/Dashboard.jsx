@@ -45,17 +45,6 @@ const Dashboard = () => {
 
                 <div className="col-6">
                     <div className="row">
-                        {/* {
-                            statusCards.map((item, index) => (
-                                <div className="col-6" key={index}>
-                                    <StatusCard
-                                        icon={item.icon}
-                                        count={post.count}
-                                        title={item.title}
-                                    />
-                                </div>
-                            ))
-                        } */}
 
                         {/* ADMIN */}
                         <div className="col-6">
@@ -121,7 +110,7 @@ const Dashboard = () => {
                             <i className='bx bx-search'></i>
                         </div>
                         <div className="card__body">
-                            <Carousel data={trash}/>
+                            <Carousel data={trash} />
                         </div>
                     </div>
                 </div>

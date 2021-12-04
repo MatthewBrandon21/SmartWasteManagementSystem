@@ -1,6 +1,5 @@
 import * as api from "../../api";
 
-// actions
 export const getTrash = () => async (dispatch) => {
   try {
     const { data } = await api.fetchTrash();

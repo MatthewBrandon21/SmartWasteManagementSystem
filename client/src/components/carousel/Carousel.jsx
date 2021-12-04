@@ -50,7 +50,6 @@ const Carousel = props => {
                     <h1>{item.tempat_sampah_name}</h1>
                     <br />
                     <li>Region : {item.tempat_sampah_region}</li>
-                    {/* <li>Location : {item.tempat_sampah_location}</li> */}
                     <li>Type : {item.tempat_sampah_jenis}</li>
                     <li>Current weight : {item.tempat_sampah_current.tempat_sampah_currentcapacity} kg</li>
                     <li>Max capacity : {item.tempat_sampah_maxcapacity} kg</li>
