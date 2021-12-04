@@ -1,7 +1,6 @@
 
 module.exports = (mongoose) => {
 
-
     const adminschema = new mongoose.Schema(
         {
             admin_email : {

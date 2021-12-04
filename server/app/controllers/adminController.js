@@ -1,32 +1,28 @@
-const db = require('../models')
-const admin = db.admins
-const  verify = require('../routes/verifyToken')
+const db = require("../models");
+const admin = db.admins;
+const verify = require("../routes/verifyToken");
 
-  //validation
-  const joi = require('@hapi/joi');
+//validation
+const joi = require("@hapi/joi");
 
-  const schema ={
-      admin_username : joi.string().min(6).required(),
-      admin_email : joi.string().min(6).required().email(),
-      admin_pwd : joi.string().min(6).required()
-      
-  }
+const schema = {
+  admin_username: joi.string().min(6).required(),
+  admin_email: joi.string().min(6).required().email(),
+  admin_pwd: joi.string().min(6).required(),
+};
 
-
-
-
-
-
-exports.findAll=(req,res) => {
-    admin.find()
-    .then((result)=>{
-        res.send(result)
-      }).catch((err)=>{
-        res.status(500).send({
-            message:err.message
-        })
+exports.findAll = (req, res) => {
+  admin
+    .find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message,
       });
-}
+    });
+};
 
 /*exports.create=(req,res) => {
   //validate 1st
@@ -51,67 +47,63 @@ exports.findAll=(req,res) => {
   });
 }
 */
-exports.findOne = (req,res) => {
-  
-  const id = req.params.id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
 
-  admin.findById(id)
-  .then((result)=>{
-    res.send(result)
-  }).catch((err)=>{
-    res.status(409).send({
-        message:err.message
+  admin
+    .findById(id)
+    .then((result) => {
+      res.send(result);
     })
-  });
-}
+    .catch((err) => {
+      res.status(409).send({
+        message: err.message,
+      });
+    });
+};
 
-exports.update= (req,res) =>{
-  const id = req.params.id
+exports.update = (req, res) => {
+  const id = req.params.id;
 
-  admin.findByIdAndUpdate(id,req.body)
-  .then((result)=>{
-    if(!result){
-      res.status(404).send({
-        message : "Not Found"
-      })
-    } 
-    res.send({
-      message : "updated"
-    })
-
-  })
-  
-  .catch((err)=>{
-    res.status(409).send({
-        message:err.message
-    })
-  });
-}
-
-exports.delete= (req,res) =>{
-  const id = req.params.id
-
-  admin.findByIdAndRemove(id)
-  .then((result)=>{
-    if(!result){
-      res.status(404).send({
-        message : "Not Found"
-      })
-    } 
-    res.send({
-      message : "Deleted"
+  admin
+    .findByIdAndUpdate(id, req.body)
+    .then((result) => {
+      if (!result) {
+        res.status(404).send({
+          message: "Not Found",
+        });
+      }
+      res.send({
+        message: "updated",
+      });
     })
 
-  })
-  
-  .catch((err)=>{
-    res.status(409).send({
-        message:err.message
+    .catch((err) => {
+      res.status(409).send({
+        message: err.message,
+      });
+    });
+};
+
+exports.delete = (req, res) => {
+  const id = req.params.id;
+
+  admin
+    .findByIdAndRemove(id)
+    .then((result) => {
+      if (!result) {
+        res.status(404).send({
+          message: "Not Found",
+        });
+      }
+      res.send({
+        message: "Deleted",
+      });
     })
-  });
-}
 
-
-
-
-
+    .catch((err) => {
+      res.status(409).send({
+        message: err.message,
+      });
+    });
+};
