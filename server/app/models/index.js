@@ -7,8 +7,8 @@ const db = {}
 
 db.mongoose = mongoose
 db.url = dbConfig.url
-db.admins = require('./admin')(mongoose)
-db.employees = require('./employee')(mongoose)
+db.users = require('./user')(mongoose)
+// db.employees = require('./employee')(mongoose)
 db.trashdatas = require('./trashdata')(mongoose)
 
 module.exports = db

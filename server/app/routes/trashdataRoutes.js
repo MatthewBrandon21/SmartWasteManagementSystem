@@ -3,7 +3,6 @@ module.exports = (app) => {
   const router = require("express").Router();
   const verify = require("../routes/verifyToken");
 
-//   router.get("/", verify.isAuth, verify.isAdmin, trashdata.findAll);
   router.get("/", trashdata.findAll);
   router.post("/", trashdata.create);
   router.get("/:id", trashdata.findOne);

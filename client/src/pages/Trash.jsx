@@ -1,49 +1,107 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Table from '../components/table/Table'
 import Carousel from '../components/carousel/Carousel';
 import Modal from '../components/modal/Modal'
 import { Icon } from '@iconify/react';
-import employeeList from '../assets/JsonData/employee-list.json'
 
 
-const trashTableHead = [
-    '',
-    'name',
-    'type',
-    'location',
-    'region',
-    'max capacity',
-    'current capacity'
-]
+// redux
+import { createTrash, updateTrash, deleteTrash } from '../redux/actions/Trash';
 
-const renderHead = (item, index) => <th key={index}>{item}</th>
-
-const renderBody = (item, index) => (
-    <tr key={index}>
-        <td>{index + 1}</td>
-        <td>{item.tempat_sampah_name}</td>
-        <td>{item.tempat_sampah_jenis}</td>
-        <td>{item.tempat_sampah_location}</td>
-        <td>{item.tempat_sampah_region}</td>
-        <td>{item.tempat_sampah_maxcapacity} kg</td>
-        <td>{item.tempat_sampah_current.tempat_sampah_currentcapacity} kg</td>
-    </tr>
-)
 
 const Trash = () => {
 
+    const trashTableHead = [
+        'name',
+        'type',
+        'location',
+        'region',
+        'max capacity',
+        'current capacity',
+        'action'
+    ]
+
+    const renderHead = (item, index) => <th key={index}>{item}</th>
+
+    const renderBody = (item, index) => (
+        <tr key={index}>
+            <td className='capitalize'>{item.tempat_sampah_name}</td>
+            <td className='capitalize'>{item.tempat_sampah_jenis}</td>
+            <td className='capitalize'>{item.tempat_sampah_location}</td>
+            <td>{item.tempat_sampah_region}</td>
+            <td>{item.tempat_sampah_maxcapacity} kg</td>
+            <td>{item.tempat_sampah_current.tempat_sampah_currentcapacity} kg</td>
+            <td>
+                <a className='btn-edit' onClick={() => { setTrashCurrId(item.id); setShow(true); }}><i className="bx bxs-edit"></i></a>&nbsp;/&nbsp;
+                <a className='btn-delete' onClick={() => { dispatch(deleteTrash(item.id)); window.location.reload(false); }}><i className="bx bx-cut"></i></a>
+            </td>
+        </tr>
+    )
+
+
+    // form
+    const [trashCurrId, setTrashCurrId] = useState(null);
+
+    const [trashFormdata, setTrashFormdata] = useState({
+        tempat_sampah_jenis: '',
+        tempat_sampah_name: '',
+        tempat_sampah_location: '',
+        tempat_sampah_region: '',
+        tempat_sampah_maxcapacity: ``,
+        tempat_sampah_totalcapacitythismonth: 0,
+        tempat_sampah_current: {
+            tempat_sampah_gpslocation: { lon: 0, lat: 0 },
+            tempat_sampah_currentcapacity: 0,
+            tempat_sampah_currentlevel: 0
+        },
+        tempat_sampah_isfull: false
+    });
+
+    const dispatch = useDispatch();
+
+    const newTrash = () => {
+        if (trashCurrId) {
+            dispatch(updateTrash(trashCurrId, trashFormdata));
+        } else {
+            dispatch(createTrash(trashFormdata));
+        }
+    }
+
+
+    const trash = useSelector((state) => trashCurrId ? state.Trash.find((i) => i.id === trashCurrId) : null);
+    const trashs = useSelector((state) => state.Trash)
+
+
     const [show, setShow] = useState(false);
+
+
+    const clearForm = () => {
+        setTrashCurrId(null);
+        setTrashFormdata({
+            tempat_sampah_jenis: '',
+            tempat_sampah_name: '',
+            tempat_sampah_location: '',
+            tempat_sampah_region: '',
+            tempat_sampah_maxcapacity: ``
+        });
+    }
+
+
+    useEffect(() => {
+        if (trash) setTrashFormdata(trash);
+    }, [trash])
+
 
     useEffect(() => {
         if (show === false) {
             document.body.style.overflow = "";
+            clearForm();
         } else {
             document.body.style.overflow = "hidden";
         }
     }, [show]);
 
-    const trash = useSelector(state => state.Trash);
 
     return (
         <div>
@@ -60,42 +118,89 @@ const Trash = () => {
                             add new
                         </button>
                         <Modal
-                            title="trash"
+                            title={<h1><i className={trashCurrId ? 'bx bxs-message-square-edit' : 'bx bxs-message-square-add'}></i> trash</h1>}
                             content={
-                                <form>
-                                    <div>
-                                        <input type="text" value="idsampah" hidden />
-                                        <input type="number" value={0} hidden />
-                                        <input value={false} hidden />
+                                <form onSubmit={newTrash}>
+
+                                    {/* content */}
+                                    <div className="modal-body">
                                         <div className="input">
-                                            <input type="text" placeholder="Name"/>
+                                            <input name='tempat_sampah_name' type="text" placeholder="Trash Name" value={trashFormdata.tempat_sampah_name} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_name: e.target.value })} />
                                         </div>
                                         <div className="input">
-                                            <select>
-                                                <option selected="true" hidden>Type</option>
-                                                <option value="Organic">Organic</option>
-                                                <option value="Non-Organic">non-organic</option>
-                                            </select>
+                                            {
+                                                trashCurrId && trashFormdata.tempat_sampah_jenis === "organic" ?
+                                                    <select name='tempat_sampah_jenis'>
+                                                        <option selected="true" value="organic">Organic</option>
+                                                        <option value="non-organic">Non-organic</option>
+                                                    </select> : trashCurrId && trashFormdata.tempat_sampah_jenis === "non-organic" ?
+                                                        <select name='tempat_sampah_jenis'>
+                                                            <option selected="true" value="organic">Organic</option>
+                                                            <option value="non-organic">Non-organic</option>
+                                                        </select> :
+                                                        <select name='tempat_sampah_jenis'>
+                                                            <option selected="true" hidden>Type</option>
+                                                            <option value="organic">Organic</option>
+                                                            <option value="non-organic">Non-organic</option>
+                                                        </select>
+                                            }
                                         </div>
                                         <div className="input">
-                                            <input type="text" placeholder="Location" />
+                                            <input name='tempat_sampah_location' type="text" placeholder="Location" value={trashFormdata.tempat_sampah_location} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_location: e.target.value })} />
                                         </div>
                                         <div className="input">
-                                            <select>
-                                                <option selected="true" hidden>Region</option>
-                                                <option value="BSD">BSD</option>
-                                                <option value="Serpong">Serpong</option>
-                                                <option value="Tangerang">Tangerang</option>
-                                            </select>
+                                            {
+                                                trashCurrId && trashFormdata.tempat_sampah_region === "BSD" ?
+                                                    <select name='tempat_sampah_region'>
+                                                        <option selected="true" value="BSD">BSD</option>
+                                                        <option value="Serpong">Serpong</option>
+                                                        <option value="Tangerang">Tangerang</option>
+                                                    </select> : trashCurrId && trashFormdata.tempat_sampah_region === "Serpong" ?
+                                                        <select name='tempat_sampah_region'>
+                                                            <option value="BSD">BSD</option>
+                                                            <option selected="true" value="Serpong">Serpong</option>
+                                                            <option value="Tangerang">Tangerang</option>
+                                                        </select> : trashCurrId && trashFormdata.tempat_sampah_region === "Tangerang" ?
+                                                            <select name='tempat_sampah_region'>
+                                                                <option value="BSD">BSD</option>
+                                                                <option value="Serpong">Serpong</option>
+                                                                <option selected="true" value="Tangerang">Tangerang</option>
+                                                            </select> :
+                                                            <select name='tempat_sampah_region'>
+                                                                <option selected="true" hidden>Region</option>
+                                                                <option value="BSD">BSD</option>
+                                                                <option value="Serpong">Serpong</option>
+                                                                <option value="Tangerang">Tangerang</option>
+                                                            </select>
+                                            }
                                         </div>
                                         <div className="input">
-                                            <select>
-                                                <option selected="true" hidden>Max Capacity</option>
-                                                <option value={10}>10</option>
-                                                <option value={20}>20</option>
-                                            </select>
+                                            {
+                                                trashCurrId && trashFormdata.tempat_sampah_maxcapacity === 10 ?
+                                                    <select name='tempat_sampah_maxcapacity'>
+                                                        <option selected="true" value={10}>10</option>
+                                                        <option value={20}>20</option>
+                                                    </select> : trashCurrId && trashFormdata.tempat_sampah_maxcapacity === 20 ?
+                                                        <select name='tempat_sampah_maxcapacity'>
+                                                            <option value={10}>10</option>
+                                                            <option selected="true" value={20}>20</option>
+                                                        </select> :
+                                                        <select name='tempat_sampah_maxcapacity'>
+                                                            <option selected="true" hidden>Max Capacity</option>
+                                                            <option value={10}>10</option>
+                                                            <option value={20}>20</option>
+                                                        </select>
+                                            }
                                         </div>
                                     </div>
+
+                                    {/* footer */}
+                                    <div className="modal-footer">
+                                        <button type="submit" className="btn-secondary">
+                                            submit
+                                        </button>
+                                    </div>
+
                                 </form>
                             }
                             show={show}
@@ -114,7 +219,7 @@ const Trash = () => {
                             <i className='bx bx-search'></i>
                         </div>
                         <div className="card__body">
-                            <Carousel data={trash} />
+                            <Carousel data={trashs} />
                         </div>
                     </div>
                 </div>
@@ -126,7 +231,7 @@ const Trash = () => {
                                 limit='5'
                                 headData={trashTableHead}
                                 renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={trash}
+                                bodyData={trashs}
                                 renderBody={(item, index) => renderBody(item, index)}
                             />
                         </div>

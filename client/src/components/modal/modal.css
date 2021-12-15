@@ -18,7 +18,6 @@ body.modal {
 
 .modal-content {
   width: 50%;
-  margin-top: -10rem;
   background-color: var(--main-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);

@@ -1,34 +1,34 @@
-const joi = require('@hapi/joi');
+const joi = require("@hapi/joi");
 
-    const adminregistervalidation = data => {
+const userregistervalidation = (data) => {
+  const schemauser = joi.object({
+    user_email: joi.string().required().email(),
+    user_username: joi.string().required(),
+    user_nama: joi.string().required(),
+    user_phonenum: joi.number().required(),
+    user_address: joi.string().required(),
+    user_pwd: joi.string().required(),
+    user_isAdmin: joi.boolean(),
+    user_isactive: joi.boolean(),
+  });
 
-    const schemaadmin = joi.object({
-        admin_email : joi.string().min(6).required().email(),
-        admin_username : joi.string().min(6).required(),
-        admin_nama : joi.string().min(6).required(),
-        admin_pwd : joi.string().min(6).required(),
-        admin_isactive : joi.boolean().required()
-    });
+  return schemauser.validate(data);
 
-    return schemaadmin.validate(data);
-
-    //const {error} = schema.validate(req.body);
-    //if(error) return res.status(400).send(error.details[0].message);
+  //const {error} = schema.validate(req.body);
+  //if(error) return res.status(400).send(error.details[0].message);
 };
 
-const adminloginvalidation = data => {
+const userloginvalidation = (data) => {
+  const schemauser = joi.object({
+    user_email: joi.string().min(6).required().email(),
+    user_pwd: joi.string().min(6).required(),
+  });
 
-    const schemaadmin = joi.object({
-        admin_email : joi.string().min(6).required().email(),
-        admin_pwd : joi.string().min(6).required()
-    });
+  return schemauser.validate(data);
 
-    return schemaadmin.validate(data);
-
-    //const {error} = schema.validate(req.body);
-    //if(error) return res.status(400).send(error.details[0].message);
+  //const {error} = schema.validate(req.body);
+  //if(error) return res.status(400).send(error.details[0].message);
 };
 
-module.exports.adminregistervalidation = adminregistervalidation;
-module.exports.adminloginvalidation = adminloginvalidation;
-
+module.exports.userregistervalidation = userregistervalidation;
+module.exports.userloginvalidation = userloginvalidation;

@@ -31,8 +31,7 @@ app.get("/", (req, res) => {
   });
 });
 
-require("./app/routes/admin.Routes")(app);
-require("./app/routes/employee.Routes")(app);
+require("./app/routes/user.Routes")(app);
 require("./app/routes/trashdataRoutes")(app);
 
 const PORT = 5000;

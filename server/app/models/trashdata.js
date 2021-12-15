@@ -13,21 +13,22 @@ module.exports = (mongoose) => {
 
   const trashdataschema = new mongoose.Schema(
     {
-      tempat_sampah_jenis: String,
-      tempat_sampah_name: String,
-      tempat_sampah_location: String,
-      tempat_sampah_region: String,
-      tempat_sampah_maxcapacity: Number,
-      tempat_sampah_totalcapacitythismonth: Number,
+      tempat_sampah_jenis: { type: String, required: true },
+      tempat_sampah_name: { type: String, required: true },
+      tempat_sampah_location: { type: String, required: true },
+      tempat_sampah_region: { type: String, required: true },
+      tempat_sampah_maxcapacity: { type: Number, required: true },
+      tempat_sampah_totalcapacitythismonth: { type: Number, required: true },
       tempat_sampah_current: trashdatacurrschema,
-      tempat_sampah_isfull: Boolean,
+      tempat_sampah_isfull: { type: Boolean, required: true },
     },
     {
       timestamps: {
         createdAt: "created_at",
         updatedAt: "updated_at",
       },
-    }
+    },
+    { versionKey: false }
   );
 
   trashdataschema.method("toJSON", function () {

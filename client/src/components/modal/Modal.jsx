@@ -15,16 +15,9 @@ const Modal = props => {
                     <button className="modal__close" onClick={props.close}>
                         <i className='bx bx-x'></i>
                     </button>
-                    <h1><i className='bx bxs-message-square-add'></i> {props.title}</h1>
+                    {props.title}
                 </div>
-                <div className="modal-body">
-                    {props.content}
-                </div>
-                <div className="modal-footer">
-                    <button className="btn-secondary">
-                        submit
-                    </button>
-                </div>
+                {props.content}
             </div>
         </div>
     )

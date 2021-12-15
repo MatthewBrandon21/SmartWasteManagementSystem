@@ -24,6 +24,7 @@
   --main-color-green: #45bb74;
   --main-color-blue: #3da7f5;
   --main-color-orange: #f5a13d;
+  --main-color-yellow: #fde721;
 
   --border-radius: 15px;
   --transition-cubic: cubic-bezier(0.175, 0.8, 0.32, 1);
@@ -265,6 +266,18 @@ select {
   font-family: "Roboto", sans-serif;
 }
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; */
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 ::placeholder {
   opacity: 0.6;
 }
@@ -275,6 +288,10 @@ select {
 
 ::-ms-input-placeholder {
   opacity: 0.6;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .flex {

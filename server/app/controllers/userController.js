@@ -1,8 +1,18 @@
 const db = require("../models");
-const employee = db.employees;
+const user = db.users;
+const verify = require("../routes/verifyToken");
+
+//validation
+const joi = require("@hapi/joi");
+
+const schema = {
+  user_username: joi.string().required(),
+  user_email: joi.string().required().email(),
+  user_pwd: joi.string().required(),
+};
 
 exports.findAll = (req, res) => {
-  employee
+  user
     .find()
     .then((result) => {
       res.send(result);
@@ -14,34 +24,34 @@ exports.findAll = (req, res) => {
     });
 };
 
-exports.create = (req, res) => {
-  const employeepost = new employee({
-    employee_email: req.body.employee_email,
-    employee_username: req.body.employee_username,
-    employee_nama: req.body.employee_nama,
-    employee_pwd: req.body.employee_pwd,
-    employee_foto: req.body.employee_foto,
-    employee_isactive: req.body.employee_isactive
-      ? req.body.employee_isactive
-      : false,
-  });
+/*exports.create=(req,res) => {
+  //validate 1st
+  const validate = joi.validate(req.body,schema);
+  res.send(validate);
+  const adminpost = new admin({
+    admin_email: req.body.admin_email,
+    admin_username : req.body.admin_username,
+    admin_nama : req.body.admin_nama,
+    admin_pwd:req.body.admin_pwd,
+    admin_foto:req.body.admin_foto,
+    admin_isactive:req.body.admin_isactive ? req.body.admin_isactive : false
+  })
 
-  employeepost
-    .save(employeepost)
-    .then((result) => {
-      res.send(result);
+  adminpost.save(adminpost)
+  .then((result)=>{
+    res.send(result)
+  }).catch((err)=>{
+    res.status(409).send({
+        message:err.message
     })
-    .catch((err) => {
-      res.status(409).send({
-        message: err.message,
-      });
-    });
-};
+  });
+}
+*/
 
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  employee
+  user
     .findById(id)
     .then((result) => {
       res.send(result);
@@ -56,7 +66,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   const id = req.params.id;
 
-  employee
+  user
     .findByIdAndUpdate(id, req.body)
     .then((result) => {
       if (!result) {
@@ -79,7 +89,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  employee
+  user
     .findByIdAndRemove(id)
     .then((result) => {
       if (!result) {

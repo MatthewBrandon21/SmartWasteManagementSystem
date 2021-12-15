@@ -15,9 +15,9 @@ import { getTrash } from '../../redux/actions/Trash';
 
 const Layout = () => {
 
-    const themeReducer = useSelector(state => state.ThemeReducer)
+    const themeReducer = useSelector(state => state.ThemeReducer);
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         // theme_menu

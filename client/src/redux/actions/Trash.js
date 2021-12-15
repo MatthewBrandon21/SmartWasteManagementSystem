@@ -6,6 +6,36 @@ export const getTrash = () => async (dispatch) => {
 
     dispatch({ type: "FETCH_ALL_TRASH", payload: data });
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
+  }
+}
+
+export const createTrash = (trash) => async (dispatch) => {
+  try {
+    const { data } = await api.createTrash(trash);
+
+    dispatch({ type: "CREATE_TRASH", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const updateTrash = (id, trash) => async (dispatch) => {
+  try {
+    const { data } = await api.updateTrash(id, trash);
+
+    dispatch({ type: "UPDATE_TRASH", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const deleteTrash = (id) => async (dispatch) => {
+  try {
+    await api.deleteTrash(id);
+
+    dispatch({ type: "DELETE_TRASH", payload: id });
+  } catch (error) {
+    console.log(error);
   }
 };

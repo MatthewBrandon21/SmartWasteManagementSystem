@@ -36,6 +36,16 @@ tbody > tr:hover {
   color: var(--txt-white);
 }
 
+.btn-edit:hover {
+  cursor: pointer;
+  color: var(--main-color-yellow);
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  color: var(--main-color-red);
+}
+
 .table__pagination {
   display: flex;
   width: 100%;

@@ -26,6 +26,10 @@ const renderCusomerBody = (item, index) => (
 const Dashboard = () => {
 
     const user = useSelector(state => state.User);
+    const admin = user.filter(item => item.user_isAdmin == true)
+    const employee = user.filter(item => item.user_isAdmin == false)
+
+
     const trash = useSelector(state => state.Trash);
 
     const sortedTrash = trash.sort((a, b) => b.tempat_sampah_totalcapacitythismonth - a.tempat_sampah_totalcapacitythismonth);
@@ -50,7 +54,7 @@ const Dashboard = () => {
                         <div className="col-6">
                             <StatusCard
                                 icon="bx bx-user-circle"
-                                count={user.length}
+                                count={admin.length}
                                 title="admin"
                             />
                         </div>
@@ -59,7 +63,7 @@ const Dashboard = () => {
                         <div className="col-6">
                             <StatusCard
                                 icon="bx bx-user"
-                                count={user.length + 3315}
+                                count={employee.length}
                                 title="employee"
                             />
                         </div>

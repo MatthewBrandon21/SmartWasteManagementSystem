@@ -5,7 +5,7 @@ import { login } from '../../redux/actions/Login'
 import logo from '../../assets/images/logo_txt.png'
 import './login.css';
 
-const initialState = { email: '', password: '' }
+const initialState = { user_email: '', user_pwd: '' }
 
 const Form = () => {
 
@@ -28,10 +28,10 @@ const Form = () => {
             <div className="login__item">
                 <h1>Login</h1>
                 <div className="login__input">
-                    <input name="email" type="email" placeholder="Email" onChange={handleChange} />
+                    <input name="user_email" type="email" placeholder="Email" onChange={handleChange} />
                 </div>
                 <div className="login__input">
-                    <input name="password" type="password" placeholder="Password" onChange={handleChange} />
+                    <input name="user_pwd" type="password" placeholder="Password" onChange={handleChange} />
                 </div>
                 <div className="login__input-btn">
                     <input type="submit" value="login" />
