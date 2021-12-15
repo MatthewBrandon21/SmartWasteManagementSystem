@@ -22,18 +22,16 @@ exports.create = (req, res) => {
     tempat_sampah_location: req.body.tempat_sampah_location,
     tempat_sampah_region: req.body.tempat_sampah_region,
     tempat_sampah_maxcapacity: req.body.tempat_sampah_maxcapacity,
-    tempat_sampah_totalcapacitythismonth: req.body.tempat_sampah_totalcapacitythismonth,
+    tempat_sampah_totalcapacitythismonth: 0,
     tempat_sampah_current: {
       tempat_sampah_gpslocation: {
-        lon: req.body.tempat_sampah_current.tempat_sampah_gpslocation.lon,
-        lat: req.body.tempat_sampah_current.tempat_sampah_gpslocation.lat
+        lon: 0,
+        lat: 0
       },
-      tempat_sampah_currentcapacity: req.body.tempat_sampah_current.tempat_sampah_currentcapacity,
-      tempat_sampah_currentlevel: req.body.tempat_sampah_current.tempat_sampah_currentlevel
+      tempat_sampah_currentcapacity: 0,
+      tempat_sampah_currentlevel: 0
     },
-    tempat_sampah_isfull: req.body.tempat_sampah_isfull
-      ? req.body.tempat_sampah_isfull
-      : false
+    tempat_sampah_isfull: false
   });
 
   trashpost

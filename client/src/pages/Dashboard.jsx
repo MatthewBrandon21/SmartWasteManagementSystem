@@ -29,13 +29,11 @@ const Dashboard = () => {
     const admin = user.filter(item => item.user_isAdmin == true)
     const employee = user.filter(item => item.user_isAdmin == false)
 
-
     const trash = useSelector(state => state.Trash);
 
     const sortedTrash = trash.sort((a, b) => b.tempat_sampah_totalcapacitythismonth - a.tempat_sampah_totalcapacitythismonth);
 
-    console.log(user);
-    console.log(trash);
+    // console.log(trash);
 
     // console.log(trash.filter(item => item.tempat_sampah_jenis=='anorganik'));
 

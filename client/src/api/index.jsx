@@ -13,17 +13,9 @@ export const createUser = (userFormdata) => API.post("/user/register", userFormd
 export const updateUser = (id, userFormdata) => API.put(`/user/${id}`, userFormdata);
 export const deleteUser = (id) => API.delete(`/user/${id}`);
 
-// export const createUser = (userFormdata) => axios.post("http://localhost:5000/user/register", userFormdata);
-// export const updateUser = (id, userFormdata) => axios.put(`http://localhost:5000/user/${id}`, userFormdata);
-// export const deleteUser = (id) => axios.delete(`http://localhost:5000/user/${id}`);
-
 
 // trash
 export const fetchTrash = () => API.get("/trashdata");
-export const createTrash = (userFormdata) => API.post("/trashdata", userFormdata);
-export const updateTrash = (id, userFormdata) => API.put(`/trashdata/${id}`, userFormdata);
+export const createTrash = (trashFormdata) => API.post("/trashdata", trashFormdata);
+export const updateTrash = (id, trashFormdata) => API.put(`/trashdata/${id}`, trashFormdata);
 export const deleteTrash = (id) => API.delete(`/trashdata/${id}`);
-
-// export const createTrash = (userFormdata) => axios.post("http://localhost:5000/trashdata", userFormdata);
-// export const updateTrash = (id, userFormdata) => axios.put(`http://localhost:5000/trashdata/${id}`, userFormdata);
-// export const deleteTrash = (id) => axios.delete(`http://localhost:5000/trashdata/${id}`);

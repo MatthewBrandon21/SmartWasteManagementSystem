@@ -49,18 +49,24 @@ const Trash = () => {
         tempat_sampah_location: '',
         tempat_sampah_region: '',
         tempat_sampah_maxcapacity: ``,
-        tempat_sampah_totalcapacitythismonth: 0,
-        tempat_sampah_current: {
-            tempat_sampah_gpslocation: { lon: 0, lat: 0 },
-            tempat_sampah_currentcapacity: 0,
-            tempat_sampah_currentlevel: 0
-        },
-        tempat_sampah_isfull: false
+        // tempat_sampah_totalcapacitythismonth: 0,
+        // tempat_sampah_current: {
+        //     tempat_sampah_gpslocation: {
+        //         lon: 0, lat: 0
+        //     },
+        //     tempat_sampah_currentcapacity: 0,
+        //     tempat_sampah_currentlevel: 0
+        // },
+        // tempat_sampah_isfull: false
     });
 
     const dispatch = useDispatch();
 
-    const newTrash = () => {
+
+    const newTrash = (e) => {
+        e.preventDefault();
+        console.log(trashFormdata)
+
         if (trashCurrId) {
             dispatch(updateTrash(trashCurrId, trashFormdata));
         } else {
@@ -130,16 +136,16 @@ const Trash = () => {
                                         <div className="input">
                                             {
                                                 trashCurrId && trashFormdata.tempat_sampah_jenis === "organic" ?
-                                                    <select name='tempat_sampah_jenis'>
-                                                        <option selected="true" value="organic">Organic</option>
+                                                    <select value={trashFormdata.tempat_sampah_jenis} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_jenis: e.target.value })}>
+                                                        <option value="organic">Organic</option>
                                                         <option value="non-organic">Non-organic</option>
                                                     </select> : trashCurrId && trashFormdata.tempat_sampah_jenis === "non-organic" ?
-                                                        <select name='tempat_sampah_jenis'>
-                                                            <option selected="true" value="organic">Organic</option>
+                                                        <select value={trashFormdata.tempat_sampah_jenis} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_jenis: e.target.value })}>
+                                                            <option value="organic">Organic</option>
                                                             <option value="non-organic">Non-organic</option>
                                                         </select> :
-                                                        <select name='tempat_sampah_jenis'>
-                                                            <option selected="true" hidden>Type</option>
+                                                        <select value={trashFormdata.tempat_sampah_jenis} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_jenis: e.target.value })}>
+                                                            <option hidden>Type</option>
                                                             <option value="organic">Organic</option>
                                                             <option value="non-organic">Non-organic</option>
                                                         </select>
@@ -151,23 +157,23 @@ const Trash = () => {
                                         <div className="input">
                                             {
                                                 trashCurrId && trashFormdata.tempat_sampah_region === "BSD" ?
-                                                    <select name='tempat_sampah_region'>
-                                                        <option selected="true" value="BSD">BSD</option>
+                                                    <select value={trashFormdata.tempat_sampah_region} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_region: e.target.value })}>
+                                                        <option value="BSD">BSD</option>
                                                         <option value="Serpong">Serpong</option>
                                                         <option value="Tangerang">Tangerang</option>
                                                     </select> : trashCurrId && trashFormdata.tempat_sampah_region === "Serpong" ?
-                                                        <select name='tempat_sampah_region'>
+                                                        <select value={trashFormdata.tempat_sampah_region} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_region: e.target.value })}>
                                                             <option value="BSD">BSD</option>
-                                                            <option selected="true" value="Serpong">Serpong</option>
+                                                            <option value="Serpong">Serpong</option>
                                                             <option value="Tangerang">Tangerang</option>
                                                         </select> : trashCurrId && trashFormdata.tempat_sampah_region === "Tangerang" ?
-                                                            <select name='tempat_sampah_region'>
+                                                            <select value={trashFormdata.tempat_sampah_region} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_region: e.target.value })}>
                                                                 <option value="BSD">BSD</option>
                                                                 <option value="Serpong">Serpong</option>
-                                                                <option selected="true" value="Tangerang">Tangerang</option>
+                                                                <option value="Tangerang">Tangerang</option>
                                                             </select> :
-                                                            <select name='tempat_sampah_region'>
-                                                                <option selected="true" hidden>Region</option>
+                                                            <select value={trashFormdata.tempat_sampah_region} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_region: e.target.value })}>
+                                                                <option hidden>Region</option>
                                                                 <option value="BSD">BSD</option>
                                                                 <option value="Serpong">Serpong</option>
                                                                 <option value="Tangerang">Tangerang</option>
@@ -177,16 +183,16 @@ const Trash = () => {
                                         <div className="input">
                                             {
                                                 trashCurrId && trashFormdata.tempat_sampah_maxcapacity === 10 ?
-                                                    <select name='tempat_sampah_maxcapacity'>
-                                                        <option selected="true" value={10}>10</option>
+                                                    <select value={trashFormdata.tempat_sampah_maxcapacity} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_maxcapacity: e.target.value })}>
+                                                        <option value={10}>10</option>
                                                         <option value={20}>20</option>
                                                     </select> : trashCurrId && trashFormdata.tempat_sampah_maxcapacity === 20 ?
-                                                        <select name='tempat_sampah_maxcapacity'>
+                                                        <select value={trashFormdata.tempat_sampah_maxcapacity} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_maxcapacity: e.target.value })}>
                                                             <option value={10}>10</option>
-                                                            <option selected="true" value={20}>20</option>
+                                                            <option value={20}>20</option>
                                                         </select> :
-                                                        <select name='tempat_sampah_maxcapacity'>
-                                                            <option selected="true" hidden>Max Capacity</option>
+                                                        <select value={trashFormdata.tempat_sampah_maxcapacity} onChange={(e) => setTrashFormdata({ ...trashFormdata, tempat_sampah_maxcapacity: e.target.value })}>
+                                                            <option hidden>Max Capacity</option>
                                                             <option value={10}>10</option>
                                                             <option value={20}>20</option>
                                                         </select>

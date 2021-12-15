@@ -13,15 +13,17 @@ const Form = () => {
     const history = useHistory()
     const dispatch = useDispatch()
 
-    const handleLogin = (e) => {
-        e.preventDefault()
-        console.log(formData)
+    const handleLogin = () => {
         dispatch(login(formData, history))
     }
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]:e.target.value })
     }
+
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile'))) 
+
+    // console.log(user)
 
     return (
         <form onSubmit={handleLogin}>

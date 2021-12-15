@@ -84,7 +84,8 @@ module.exports = (app) => {
       }
     );
 
-    res.header("auth-token", token).send(token);
+    res.status(200).json({result: userexist, token})
+    // res.header("auth-token", token).send(token);
   });
 
   app.use("/user", router);

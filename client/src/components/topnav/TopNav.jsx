@@ -24,7 +24,7 @@ const renderUserToggle = (user) => (
     </div>
 )
 
-const renderUserMenu =(item, index) => (
+const renderUserMenu = (item, index) => (
     <Link to='/' key={index}>
         <div className="notification-item">
             <i className={item.icon}></i>
@@ -34,12 +34,16 @@ const renderUserMenu =(item, index) => (
 )
 
 const Topnav = () => {
+
+    // login
+    const userLogin = JSON.parse(localStorage.getItem('profile'));
+
     return (
         <div className='topnav'>
             <div className="welcome">
                 <Typewriter
                     options={{
-                        strings: ['Hi there!👋','Keep it up!🔥','You can do it!💪',"Don't forget to drink!🥤"],
+                        strings: ['Hi there!👋', 'Keep it up!🔥', 'You can do it!💪', "Don't forget to drink!🥤"],
                         autoStart: true,
                         loop: true
                     }}
@@ -49,14 +53,19 @@ const Topnav = () => {
                 <div className="topnav__right-item">
                     {/* dropdown here */}
                     <Dropdown
-                        customToggle={() => renderUserToggle(curr_user)}
+                        customToggle={() => renderUserToggle(
+                            {
+                                display_name: userLogin.result.user_username,
+                                image: user_image
+                            }
+                        )}
                         contentData={user_menu}
                         renderItems={(item, index) => renderUserMenu(item, index)}
                     />
                 </div>
 
                 <div className="topnav__right-item">
-                    <ThemeMenu/>
+                    <ThemeMenu />
                 </div>
             </div>
         </div>

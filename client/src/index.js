@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
@@ -15,6 +15,12 @@ import "./assets/css/index.css";
 import Login from "./components/login/Login";
 import Layout from "./components/layout/Layout";
 
+const user = () => {
+  const userLogin = JSON.parse(localStorage.getItem("profile"));
+
+  return userLogin;
+};
+
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 document.title = "SWMS | Smart Waste Management System";
@@ -22,8 +28,7 @@ document.title = "SWMS | Smart Waste Management System";
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      {/* <Login /> */}
-      <Layout />
+      {user() === null ? <Login /> : <Layout />}
     </React.StrictMode>
   </Provider>,
   document.getElementById("root")

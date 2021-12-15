@@ -16,7 +16,7 @@ export const createTrash = (trash) => async (dispatch) => {
 
     dispatch({ type: "CREATE_TRASH", payload: data });
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 }
 

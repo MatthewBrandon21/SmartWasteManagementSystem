@@ -1,15 +1,16 @@
-export default (state = { loginData: null }, action) => {
+export default (token = { loginData: null }, action) => {
     switch (action.type) {
       case "LOGIN":
-        localStorage.setItem('profile', JSON.stringify({ ...action?.data }));
+        // console.log(action?.payload)
+        localStorage.setItem('profile', JSON.stringify({ ...action?.payload }));
 
-        return { ...state, authData: action?.data };
+        return { ...token, authData: action?.payload };
       case "LOGOUT":
         localStorage.clear();
 
-        return { ...state, authData: null };
+        return { ...token, authData: null };
       default:
-        return state;
+        return token;
     }
   };
   
