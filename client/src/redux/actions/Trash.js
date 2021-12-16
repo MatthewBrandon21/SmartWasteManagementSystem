@@ -15,6 +15,9 @@ export const createTrash = (trash) => async (dispatch) => {
     const { data } = await api.createTrash(trash);
 
     dispatch({ type: "CREATE_TRASH", payload: data });
+
+    window.location.reload(false);
+
   } catch (error) {
     console.log(error.message);
   }
@@ -25,6 +28,9 @@ export const updateTrash = (id, trash) => async (dispatch) => {
     const { data } = await api.updateTrash(id, trash);
 
     dispatch({ type: "UPDATE_TRASH", payload: data });
+
+    window.location.reload(false);
+
   } catch (error) {
     console.log(error);
   }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/actions/Login'
 import logo from '../../assets/images/logo_txt.png'
@@ -10,20 +9,18 @@ const initialState = { user_email: '', user_pwd: '' }
 const Form = () => {
 
     const [formData, setFormData] = useState(initialState)
-    const history = useHistory()
     const dispatch = useDispatch()
 
-    const handleLogin = () => {
-        dispatch(login(formData, history))
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        dispatch(login(formData));
     }
+
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]:e.target.value })
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
-
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile'))) 
-
-    // console.log(user)
 
     return (
         <form onSubmit={handleLogin}>
@@ -47,9 +44,9 @@ const Login = () => {
 
     return (
         <div className="login">
-            <div className="login__logo">
+            <a href="/"><div className="login__logo">
                 <img src={logo} alt="company logo" />
-            </div>
+            </div></a>
             <Form />
         </div>
     )

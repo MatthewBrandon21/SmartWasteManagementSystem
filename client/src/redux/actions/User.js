@@ -15,6 +15,9 @@ export const createUser = (user) => async (dispatch) => {
     const { data } = await api.createUser(user);
 
     dispatch({ type: "CREATE_USER", payload: data });
+
+    window.location.reload(false);
+
   } catch (error) {
     console.log(error);
   }
@@ -25,6 +28,9 @@ export const updateUser = (id, user) => async (dispatch) => {
     const { data } = await api.updateUser(id, user);
 
     dispatch({ type: "UPDATE_USER", payload: data });
+
+    window.location.reload(false);
+
   } catch (error) {
     console.log(error);
   }

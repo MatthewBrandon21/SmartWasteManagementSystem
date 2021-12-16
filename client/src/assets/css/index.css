@@ -430,18 +430,6 @@ select {
   align-items: center;
 }
 
-/* .input >  {
-  width: 50%;
-  height: 40px;
-  background-color: var(--main-bg);
-  box-shadow: var(--box-shadow);
-  border: 0.1px solid var(--main-bg);
-  border: 0.1px solid #d8d8d8;
-  border-radius: 15px;
-  transition: 0.3s;
-  align-items: center;
-} */
-
 .input > input:focus,
 select:focus {
   outline: none;
@@ -454,6 +442,14 @@ select:focus {
   position: absolute;
   right: 20px;
   opacity: 0.5;
+}
+
+.input-checkbox > input {
+  transform: scale(2);
+}
+
+.input-checkbox > input:hover {
+  cursor: pointer;
 }
 
 .search {

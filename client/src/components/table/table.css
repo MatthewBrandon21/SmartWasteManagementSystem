@@ -46,6 +46,11 @@ tbody > tr:hover {
   color: var(--main-color-red);
 }
 
+.btn-check:hover {
+  cursor: pointer;
+  color: var(--main-color-yellow);
+}
+
 .table__pagination {
   display: flex;
   width: 100%;

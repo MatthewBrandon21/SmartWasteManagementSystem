@@ -5,7 +5,8 @@ import H from "@here/maps-api-for-javascript";
 const MapsLayout = () => {
 
     const trashData = useSelector(state => state.Trash);
-    console.log(trashData);
+    const trashDataFull = trashData.filter(item => item.tempat_sampah_isfull === true);
+    // console.log(trashData);
 
     const mapRef = React.useRef(null);
 
@@ -18,14 +19,13 @@ const MapsLayout = () => {
 
         const defaultLayers = platform.createDefaultLayers();
         const hMap = new H.Map(mapRef.current, defaultLayers.vector.normal.map, {
-            center: { lat: -6.257505050003357, lng: 106.61842168837853 },
-            zoom: 17,
+            center: { lat: -7.084587583796957, lng: 110.41750999650564 },
+            zoom: 16,
             pixelRatio: window.devicePixelRatio || 1
         });
 
         const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(hMap));
         const ui = H.ui.UI.createDefault(hMap, defaultLayers);
-
 
 
         // marker svg
@@ -42,10 +42,15 @@ const MapsLayout = () => {
         //  marker params
         // mainOffice
         const icon_mainOffice = new H.map.Icon(mainOffice)
-        const coords_mainOffice = { lat: -6.257505050003357, lng: 106.61842168837853 }
+        const coords_mainOffice = { lat: -7.0850615204707434, lng: 110.4176823076959 }
         const marker_mainOffice = new H.map.Marker(coords_mainOffice, { icon: icon_mainOffice })
 
-        hMap.addObject(marker_mainOffice);
+
+        // waypoints
+        const waypoints = trashDataFull.map((item) => (
+            "" + item.tempat_sampah_current.tempat_sampah_gpslocation.lat + ","
+            + item.tempat_sampah_current.tempat_sampah_gpslocation.lon + ""
+        ))
 
 
         // trash
@@ -62,11 +67,89 @@ const MapsLayout = () => {
             ))
         ))
 
-        // const icon_trash = new H.map.Icon(trash)
-        // const coords_trash = { lat: -6.255708310437333, lng: 106.6166063947495 }
-        // const marker_trash = new H.map.Marker(coords_trash, { icon: icon_trash })
 
-        // hMap.addObject(marker_trash);
+        const routingParams = {
+            'routingMode': 'fast',
+            'transportMode': 'car',
+            'origin': '-7.0850615204707434,110.4176823076959',
+            'destination': '-7.0850615204707434,110.4176823076959',
+            'via': new H.service.Url.MultiValueQueryParameter(waypoints),
+            'return': 'polyline'
+        };
+
+        //   lat = "-7.085588";
+        //   lon = "110.417997";<< tempat sampah aslinya 
+
+
+        hMap.addObject(marker_mainOffice);
+
+
+
+        const onResult = function (result) {
+            if (result.routes.length) {
+                result.routes[0].sections.forEach((section) => {
+                    let linestring = H.geo.LineString.fromFlexiblePolyline(section.polyline);
+
+                    // let routeLine = new H.map.Polyline(linestring, {
+                    //     style: { strokeColor: 'blue', lineWidth: 3 }
+                    // });
+
+                    let startMarker = new H.map.Marker(section.departure.place.location);
+
+                    let endMarker = new H.map.Marker(section.arrival.place.location);
+
+                    var routeOutline = new H.map.Polyline(linestring, {
+                        style: {
+                          lineWidth: 10,
+                          strokeColor: 'rgba(0, 128, 255, 0.7)',
+                          lineTailCap: 'arrow-tail',
+                          lineHeadCap: 'arrow-head'
+                        }
+                      });
+                      // Create a patterned polyline:
+                      var routeArrows = new H.map.Polyline(linestring, {
+                        style: {
+                          lineWidth: 10,
+                          fillColor: 'white',
+                          strokeColor: 'rgba(255, 255, 255, 1)',
+                          lineDash: [0, 2],
+                          lineTailCap: 'arrow-tail',
+                          lineHeadCap: 'arrow-head' }
+                        }
+                      );
+                      // create a group that represents the route line and contains
+                      // outline and the pattern
+                      var routeLine = new H.map.Group();
+                      
+                    routeLine.addObjects([routeOutline, routeArrows]);
+
+                    hMap.addObjects([routeLine, startMarker, endMarker]);
+
+                    hMap.getViewModel().setLookAtData({ bounds: routeLine.getBoundingBox() });
+                });
+            }
+        };
+
+        const router = platform.getRoutingService(null, 8);
+
+        router.calculateRoute(routingParams, onResult,
+            function (error) {
+                alert(error.message);
+            });
+
+
+        // trashData.map((item) => (
+
+        //     ui.addBubble( new H.ui.InfoBubble(
+        //         {
+        //             lat: item.tempat_sampah_current.tempat_sampah_gpslocation.lat,
+        //             lng: item.tempat_sampah_current.tempat_sampah_gpslocation.lon
+        //         },
+        //         {
+        //             content: '<b>Hello World!</b>'
+        //         }
+        //     ))
+        // ))
 
         return () => {
             // ui

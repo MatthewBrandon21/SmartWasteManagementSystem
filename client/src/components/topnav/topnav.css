@@ -36,6 +36,7 @@
 
 .notification-item:hover {
     background-color: var(--second-bg);
+    cursor: pointer;
 }
 
 .notification-item > i {
