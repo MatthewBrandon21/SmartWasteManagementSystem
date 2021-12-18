@@ -76,7 +76,7 @@ void loop() {
     servo.write(0);
   } else {
     full = 0;
-    servo.write(0);
+    servo.write(45);
   }
   onReceive(LoRa.parsePacket(), weightvalue, levelvalue, full);
   //nodemessage = String(weightvalue) +"," + String(levelvalue) + "," + lat_str + "," + lon_str + "," + full + "," + idnode; 
