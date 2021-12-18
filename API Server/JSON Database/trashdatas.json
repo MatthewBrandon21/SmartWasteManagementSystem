@@ -1,0 +1,185 @@
+[{
+  "_id": "81",
+  "tempat_sampah_jenis": "non-organic",
+  "tempat_sampah_name": "angrek1",
+  "tempat_sampah_location": "Jl. Boulevard No.17, Gading Serpong, Curug Sangereng, Kelapa Dua, Tangerang, Banten",
+  "tempat_sampah_region": "BSD",
+  "tempat_sampah_maxcapacity": 20,
+  "tempat_sampah_totalcapacitythismonth": 2720,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.41985011396393,
+      "lat": -7.084492122935759
+    },
+    "tempat_sampah_currentcapacity": 15,
+    "tempat_sampah_currentlevel": 6
+  },
+  "tempat_sampah_isfull": false,
+  "created_at": {
+    "$date": "2021-11-29T18:13:53.513Z"
+  },
+  "updated_at": {
+    "$date": "2021-12-15T16:16:49.655Z"
+  }
+},{
+  "_id": "1f",
+  "tempat_sampah_jenis": "non-organic",
+  "tempat_sampah_name": "angrek2",
+  "tempat_sampah_location": "Jl. Boulevard No.34, Gading Serpong, Curug Sangereng, Kelapa Dua, Tangerang, Banten",
+  "tempat_sampah_region": "BSD",
+  "tempat_sampah_maxcapacity": 10,
+  "tempat_sampah_totalcapacitythismonth": 4246,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.41575021844287,
+      "lat": -7.08371078673565
+    },
+    "tempat_sampah_currentcapacity": 7,
+    "tempat_sampah_currentlevel": 4
+  },
+  "tempat_sampah_isfull": false,
+  "created_at": {
+    "$date": "2021-11-29T18:14:07.458Z"
+  },
+  "updated_at": {
+    "$date": "2021-11-29T18:14:07.458Z"
+  }
+},{
+  "_id": "fg",
+  "tempat_sampah_jenis": "organic",
+  "tempat_sampah_name": "melati",
+  "tempat_sampah_location": "Jl. W. R. Supratman No.8, Serpong, Tangerang, Banten",
+  "tempat_sampah_region": "Serpong",
+  "tempat_sampah_maxcapacity": 20,
+  "tempat_sampah_totalcapacitythismonth": 1640,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.41674068696355,
+      "lat": -7.085904572839467
+    },
+    "tempat_sampah_currentcapacity": 20,
+    "tempat_sampah_currentlevel": 17
+  },
+  "tempat_sampah_isfull": true,
+  "created_at": {
+    "$date": "2021-11-29T18:14:16.859Z"
+  },
+  "updated_at": {
+    "$date": "2021-11-29T18:14:16.859Z"
+  }
+},{
+  "_id": "ef",
+  "tempat_sampah_jenis": "organic",
+  "tempat_sampah_name": "mawar1",
+  "tempat_sampah_location": "Jl. Pemuda No.68, Serpong, Tangerang, Banten",
+  "tempat_sampah_region": "Tangerang",
+  "tempat_sampah_maxcapacity": 10,
+  "tempat_sampah_totalcapacitythismonth": 938,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.41752619717901,
+      "lat": -7.0869147138034805
+    },
+    "tempat_sampah_currentcapacity": 8,
+    "tempat_sampah_currentlevel": 6
+  },
+  "tempat_sampah_isfull": false,
+  "created_at": {
+    "$date": "2021-11-29T18:14:24.414Z"
+  },
+  "updated_at": {
+    "$date": "2021-11-29T18:14:24.414Z"
+  }
+},{
+  "_id": "z1",
+  "tempat_sampah_jenis": "organic",
+  "tempat_sampah_name": "mawar2",
+  "tempat_sampah_location": "Jl. Pemuda No.95, Serpong, Tangerang, Banten",
+  "tempat_sampah_region": "Tangerang",
+  "tempat_sampah_maxcapacity": 20,
+  "tempat_sampah_totalcapacitythismonth": 1385,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.4177828767649,
+      "lat": -7.083175976419958
+    },
+    "tempat_sampah_currentcapacity": 14,
+    "tempat_sampah_currentlevel": 4
+  },
+  "tempat_sampah_isfull": false,
+  "created_at": {
+    "$date": "2021-11-29T18:14:35.495Z"
+  },
+  "updated_at": {
+    "$date": "2021-11-29T18:14:35.495Z"
+  }
+},{
+  "_id": "9s",
+  "tempat_sampah_jenis": "non-organic",
+  "tempat_sampah_name": "mawar3",
+  "tempat_sampah_location": "Jl. Pemuda No.103, Serpong, Tangerang, Banten",
+  "tempat_sampah_region": "Tangerang",
+  "tempat_sampah_maxcapacity": 10,
+  "tempat_sampah_totalcapacitythismonth": 721,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.4193584858281,
+      "lat": -7.08577770155544
+    },
+    "tempat_sampah_currentcapacity": 10,
+    "tempat_sampah_currentlevel": 6
+  },
+  "tempat_sampah_isfull": true,
+  "created_at": {
+    "$date": "2021-11-29T18:14:42.983Z"
+  },
+  "updated_at": {
+    "$date": "2021-12-15T14:27:54.126Z"
+  }
+},{
+  "_id": "1m",
+  "tempat_sampah_jenis": "non-organic",
+  "tempat_sampah_name": "tulip1",
+  "tempat_sampah_location": "Jl. Merak No.128, Gading Serpong, Tangerang, Banten",
+  "tempat_sampah_region": "BSD",
+  "tempat_sampah_maxcapacity": 10,
+  "tempat_sampah_totalcapacitythismonth": 1053,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.41491541563119,
+      "lat": -7.0866847374110655
+    },
+    "tempat_sampah_currentcapacity": 6,
+    "tempat_sampah_currentlevel": 2
+  },
+  "tempat_sampah_isfull": false,
+  "created_at": {
+    "$date": "2021-11-29T18:14:53.860Z"
+  },
+  "updated_at": {
+    "$date": "2021-11-29T18:14:53.860Z"
+  }
+},{
+  "_id": "pq",
+  "tempat_sampah_jenis": "organic",
+  "tempat_sampah_name": "tulip2",
+  "tempat_sampah_location": "Jl. Merak No.212 Gading Serpong, Tangerang, Banten",
+  "tempat_sampah_region": "BSD",
+  "tempat_sampah_maxcapacity": 20,
+  "tempat_sampah_totalcapacitythismonth": 1008,
+  "tempat_sampah_current": {
+    "tempat_sampah_gpslocation": {
+      "lon": 110.42223223616986,
+      "lat": -7.083654178314987
+    },
+    "tempat_sampah_currentcapacity": 13,
+    "tempat_sampah_currentlevel": 7
+  },
+  "tempat_sampah_isfull": false,
+  "created_at": {
+    "$date": "2021-11-29T18:15:02.395Z"
+  },
+  "updated_at": {
+    "$date": "2021-11-29T18:15:02.395Z"
+  }
+}]

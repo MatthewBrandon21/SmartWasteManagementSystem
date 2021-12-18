@@ -32,6 +32,7 @@ You can access this demo API to https://smartwastemanagement-api.herokuapp.com/
 ## How to use this project ?
 If you want reverse engineering this project app:
 1. Clone this folder
+2. Make MongoDB database with users and trashdatas collection (You can see example on JSON Database/ .json).
 2. Set url mongoDB database in config/db.config.js
 3. set port according to your system port availability in app.js 
 4. Run npm install

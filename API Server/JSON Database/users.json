@@ -1,0 +1,232 @@
+[{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a0"
+  },
+  "user_email": "william@gmail.com",
+  "user_username": "willppw",
+  "user_nama": "William Putra Pramata",
+  "user_address": "Psr. Bakau No. 402",
+  "user_phonenum": 4065955538,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": true
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a2"
+  },
+  "user_email": "matthewb@gmail.com",
+  "user_username": "lordbrandon",
+  "user_nama": "Matthew Brandon Dani",
+  "user_address": "Gg. Arifin No. 345",
+  "user_phonenum": 1942837223,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": true
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a1"
+  },
+  "user_email": "michaeliandiraa@gmail.com",
+  "user_username": "rellpa",
+  "user_nama": "Michael Fareliandira",
+  "user_address": "Gg. Flora No. 374",
+  "user_phonenum": 8055473640,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": true
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a3"
+  },
+  "user_email": "ekonugro@gmail.com",
+  "user_username": "ekonugro",
+  "user_nama": "Rupertus Herlambang Eko",
+  "user_address": "Kpg. Tobing No. 877",
+  "user_phonenum": 7229029706,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": true
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a4"
+  },
+  "user_email": "wulandari.cakrawangsa@hutasoit.sch.id",
+  "user_username": "ibuntya",
+  "user_nama": "Ibun Prasetya",
+  "user_address": "Ki. Yos No. 442",
+  "user_phonenum": 802146315,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a5"
+  },
+  "user_email": "blaksmiwati@rahimah.or.id",
+  "user_username": "tirtbi",
+  "user_nama": "Tirta Habibi",
+  "user_address": "Dk. Dahlia No. 974",
+  "user_phonenum": 9380290962,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a6"
+  },
+  "user_email": "adriansyah.queen@gmail.co.id",
+  "user_username": "ciaobni",
+  "user_nama": "Ciaobella Suartini",
+  "user_address": "Gg. Yogyakarta No. 569",
+  "user_phonenum": 77240779235,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a7"
+  },
+  "user_email": "danang11@gmail.co.id",
+  "user_username": "tasnimna",
+  "user_nama": "Tasnim Pradana",
+  "user_address": "Jr. Kartini No. 266",
+  "user_phonenum": 661835151,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a8"
+  },
+  "user_email": "umaya68@gmail.com",
+  "user_username": "nurulnti",
+  "user_nama": "Nurul Purwanti",
+  "user_address": "Ds. Kartini No. 626",
+  "user_phonenum": 7296052418,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54a9"
+  },
+  "user_email": "enasyiah@widiastuti.or.id",
+  "user_username": "jelini",
+  "user_nama": "Jelita Wahyuni",
+  "user_address": "Jr. Salatiga No. 476",
+  "user_phonenum": 70433454918,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b0"
+  },
+  "user_email": "pia.zulkarnain@wastuti.ac.id",
+  "user_username": "panjan",
+  "user_nama": "Panji Gunawan",
+  "user_address": "Gg. Sadang Serang No. 891",
+  "user_phonenum": 88261867810,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b1"
+  },
+  "user_email": "ppuspita@firmansyah.com",
+  "user_username": "ratiita",
+  "user_nama": "Ratih Laksita",
+  "user_address": "Sw. Sumatera No. 147",
+  "user_phonenum": 8054959208,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b2"
+  },
+  "user_email": "gilang20@pudjiastuti.go.id",
+  "user_username": "damuprana",
+  "user_nama": "Damu Pradana",
+  "user_address": "Ds. Baung No. 53",
+  "user_phonenum": 45253843946,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b3"
+  },
+  "user_email": "aprayoga@yahoo.com",
+  "user_username": "yusuma",
+  "user_nama": "Yusuf Pratama",
+  "user_address": "Dk. Industri No. 360",
+  "user_phonenum": 800610122,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b4"
+  },
+  "user_email": "wijayanti.emin@gmail.co.id",
+  "user_username": "chelani",
+  "user_nama": "Chelsea Oktaviani",
+  "user_address": "Kpg. Bakhita No. 632",
+  "user_phonenum": 2298784086,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b5"
+  },
+  "user_email": "uli75@rahmawati.co",
+  "user_username": "zamirnti",
+  "user_nama": "Zamira Yulianti",
+  "user_address": "Ki. Thamrin No. 724",
+  "user_phonenum": 30479078808,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b6"
+  },
+  "user_email": "ratih18@pratiwi.asia",
+  "user_username": "danuwo",
+  "user_nama": "Danuja Prabowo",
+  "user_address": "Kpg. Dago No. 306",
+  "user_phonenum": 65701530525,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b7"
+  },
+  "user_email": "anastasia15@yahoo.co.id",
+  "user_username": "prayouyo",
+  "user_nama": "Prayoga Waluyo",
+  "user_address": "Gg. Casablanca No. 558",
+  "user_phonenum": 37418478906,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b8"
+  },
+  "user_email": "jdongoran@yahoo.co.id",
+  "user_username": "lasmulu",
+  "user_nama": "Lasmono Napitupulu",
+  "user_address": "Kpg. Yos No. 289",
+  "user_phonenum": 8615403756,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54b9"
+  },
+  "user_email": "yuni39@saptono.biz",
+  "user_username": "emasati",
+  "user_nama": "Emas Narpati",
+  "user_address": "Dk. Astana Anyar No. 932",
+  "user_phonenum": 4108324208,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+},{
+  "_id": {
+    "$oid": "61a4d97aa9a9d678643a54c0"
+  },
+  "user_email": "purwanti.dadi@yahoo.com",
+  "user_username": "donohto",
+  "user_nama": "Dono Hidayanto",
+  "user_address": "Jln. Pacuan Kuda No. 4",
+  "user_phonenum": 4092682864,
+  "user_pwd": "$2a$10$cJaUP88nBJPy4VNyQdekJuhlrfoC2NgP.03FkTjljpEvzGXJXuJn6",
+  "user_isAdmin": false
+}]
