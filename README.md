@@ -74,4 +74,11 @@ DIO0 : D2 (ESP8266)
 Digital 7 (Arduino Uno): TX (ESP8266),
 Digital 8 (Arduino Uno): RX (ESP8266)
 
+#
 
+## Final result
+<p align="Center">
+  <img width="800" src="Images/303104.jpg" />
+  <img width="800" src="Images/303102.jpg" />
+  <img width="800" src="client/Images/Screenshot_5.jpg" />
+</p>
