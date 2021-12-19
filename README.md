@@ -85,4 +85,4 @@ Digital 8 (Arduino Uno): RX (ESP8266)
 
 #
 
-##<i>If need help, feel free to contact us! MatthewBrandon21 / rellpa.</i>
+## <i>If need help, feel free to contact us! MatthewBrandon21 / rellpa.</i>
