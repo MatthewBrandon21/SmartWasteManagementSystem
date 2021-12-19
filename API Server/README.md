@@ -48,5 +48,32 @@ How to use API:
 
 #
 
+## API Documentation
+Trash data API ( /trashdata):
+- router.get("/",trashdata.findAll);  -> Get all trash data
+
+- router.post("/", trashdata.create); -> Make new trash data (use json body on http request)
+
+- router.get("/:id", trashdata.findOne); -> Get trash data by id
+
+- router.put("/:id", trashdata.update); -> Update trash data by id (use json body on http request)
+
+- router.delete("/:id",trashdata.delete); -> Delete trash data by id
+
+API User :
+- router.get("/", users.findAll); -> Get all users
+ 
+- router.get("/:id", users.findOne); -> Get a user by id
+
+- router.put("/:id", users.update); -> Update user by id (use json body on http request)
+ 
+- router.delete("/:id", users.delete); -> Delete user by id
+ 
+- router.post("/register", async (req, res) => { function goes here } -> Register user
+ 
+- router.post("/login", async (req, res) => { function goes here } -> Login user
+
+#
+
 ### <i>*For improvement<i/>
 You can add authentication for device (ESP32 HTTP POST)
