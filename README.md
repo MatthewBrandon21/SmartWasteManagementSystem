@@ -7,10 +7,10 @@
 
 Preview of this system:
 <p align="left">
-  <img width="400" src="Images/Preview.jpg" />
+  <img width="800" src="Images/Preview.jpg" />
 </p>
 
 General Architecture
 <p align="left">
-  <img width="400" src="Images/General Architecture.jpg" />
+  <img width="800" src="Images/General Architecture.jpg" />
 </p>
