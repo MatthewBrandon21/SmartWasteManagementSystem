@@ -42,26 +42,26 @@ Hardware Architecture:
 Total budget (December 2021) = Rp. 356.200 (~ US $24,76)
 
 ### Component pin connection
-1. Servo
+1. Servo --> 
 Orange : D3 (ESP8266)
 Brown : GND (ESP8266)
 Red : 3V3 (ESP8266)
-2. Ultrasonic
+2. Ultrasonic --> 
 VCC : 5V (Arduino Uno)
 Trig : Digital 5 (Arduino Uno)
 Echo : Digital 6 (Arduino Uno)
 GND : GND (Arduino Uno)
-3. GPS
+3. GPS --> 
 GND : GND (ESP8266)
 TX : D4 (ESP8266)
 RX : D1 (ESP8266)
 VCC : 3v3 (ESP8266)
-4. HX711
+4. HX711 --> 
 VCC : 5V (Arduino Uno)
 SCK : Digital 2 (Arduino Uno)
 Data : Digital 3 (Arduino Uno)
 GND : GND (Arduino Uno)
-5. LoRa Wan
+5. LoRa Wan --> 
 GND : GND (ESP8266)
 VCC : 3.3V (ESP8266)
 NSS : D8 (ESP8266)
@@ -70,7 +70,7 @@ MISO : D6 (ESP8266)
 CK : D5 (ESP8266)
 RST : D0 (ESP8266)
 DIO0 : D2 (ESP8266)
-6. Serial Communication Arduino Uno and ESP8266
+6. Serial Communication Arduino Uno and ESP8266 --> 
 Digital 7 (Arduino Uno): TX (ESP8266)
 Digital 8 (Arduino Uno): RX (ESP8266)
 
