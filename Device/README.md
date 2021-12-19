@@ -1,78 +1,32 @@
-<h1 align="center">
-  Smart Waste Management System (SWMS)
-</h1>
-<p align="center">
-  Smart city waste management system for our Mobile Pervasive Computing course final project.
-</p>
+# Smart Waste Management System Arduino Code
 
-### Preview of this system
-<p align="Center">
-  <img width="800" src="Images/Preview.jpg" />
-</p>
-
-### General Architecture
-<p align="Center">
-  <img width="800" src="Images/General Architecture.jpg" />
-</p>
+We're using ESP8266
+For some other controllers including controllers which are not ESP family, may need some more configuration.
 
 #
 
-## How to make node device
+## libraries
+1. SPI.h
+2. Lora.h
+3. ESP8266WiFi.h
+4. ESP8266HTTPClient.h
+5. WiFiClient.h
+6. TinyGPS++.h
+7. SofwareSerial.h
+8. Servo.h
+9. HX711.h
+10. stdlib.h
 
-### Hardware Architecture
-<p align="Center">
-  <img width="800" src="Images/Hardware Architecture.jpg" />
-</p>
+#
 
-### List of component
-- Microcontroller ESP8266
-- Microcontroller Arduino Uno
-- Lora Module SX1278
-- GPS Module Neo 6M
-- Weight Sensor HX711+ 10kg Load cell
-- Ultrasonic Sensor HC SR 04
-- Servo SG40
-- Battery 18650
-- TP4056A
-
-### List of component for gateway
-- Microcontroller ESP8266
-- Lora Module SX1278
-
-Total budget (December 2021) = Rp. 356.200 (~ US $24,76)
-
-### Component pin connection
-1. Servo --> 
-Orange : D3 (ESP8266),
-Brown : GND (ESP8266),
-Red : 3V3 (ESP8266)
-2. Ultrasonic --> 
-VCC : 5V (Arduino Uno),
-Trig : Digital 5 (Arduino Uno),
-Echo : Digital 6 (Arduino Uno),
-GND : GND (Arduino Uno)
-3. GPS --> 
-GND : GND (ESP8266),
-TX : D4 (ESP8266),
-RX : D1 (ESP8266),
-VCC : 3v3 (ESP8266)
-4. HX711 --> 
-VCC : 5V (Arduino Uno),
-SCK : Digital 2 (Arduino Uno),
-Data : Digital 3 (Arduino Uno),
-GND : GND (Arduino Uno)
-5. LoRa Wan --> 
-GND : GND (ESP8266),
-VCC : 3.3V (ESP8266),
-NSS : D8 (ESP8266),
-MOSI : D7 (ESP8266),
-MISO : D6 (ESP8266),
-CK : D5 (ESP8266),
-RST : D0 (ESP8266),
-DIO0 : D2 (ESP8266)
-6. Serial Communication Arduino Uno and ESP8266 --> 
-Digital 7 (Arduino Uno): TX (ESP8266),
-Digital 8 (Arduino Uno): RX (ESP8266)
+## How to use this project ?
+If you want reverse engineering this project app:
+- Install and open arduino IDE
+- Install esp38266 board family, using board manager
+- Clone and open "Arduino Uno.ino", "ESP8266 Gateway.ino", and "ESP8266 Node.ino"
+- Configure URL of API Server on "ESP8266 Gateway.ino"
+- Flash 3 ino file to seperate controller (Arduino Uno.ino --> arduino uno, ESP8266 Gateway.ino --> esp8266 gateway, etc)
+- Done
 
 #
 
@@ -91,15 +45,4 @@ For lora module with esp8266 using SPI communication protocol between the two. S
 
 So in the picture above, you can see the change in data retrieval requests and data updates to the API by the gateway. So in this example, seconds 1-5 will retrieve data from node 1 and seconds 6-10 will retrieve data from node 2.
 
-#
-
-## Final result
-<p align="Center">
-  <img width="800" src="Images/303104.jpg" />
-  <img width="800" src="Images/303102.jpg" />
-  <img width="800" src="client/Images/Screenshot_5.jpg" />
-</p>
-
-#
-
-## <i>If need help, feel free to contact us! MatthewBrandon21 / rellpa.</i>
+<i>if need help, feel free to contact us! MatthewBrandon21 / rellpa.</i>
