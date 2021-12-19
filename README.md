@@ -6,11 +6,11 @@
 </p>
 
 Preview of this system:
-<p align="left">
+<p align="Center">
   <img width="800" src="Images/Preview.jpg" />
 </p>
 
 General Architecture
-<p align="left">
+<p align="Center">
   <img width="800" src="Images/General Architecture.jpg" />
 </p>
