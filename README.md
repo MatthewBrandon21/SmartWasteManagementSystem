@@ -86,7 +86,7 @@ For communication between the ESP8266 and Arduino Uno, use serial communication 
 For lora module with esp8266 using SPI communication protocol between the two. So the plot of Arduino Uno will send serial communication for weight sensor and Ultrasonic with plain text. Then it will be parsed by esp8266 in the trash, plus GPS data and the logic of whether the trash can is full or not by esp8266. And part of the value will be sent via Lora Payload to the esp8266 gateway. the gateway will parse the data sent by the node, and finally it will be generated as JSON to be sent HTTP PUT to the web API by the gateway.
 
 <p align="Center">
-  <img width="800" src="Images/code 1.jpg" />
+  <img width="800" src="Device/Images/code 1.png" />
 </p>
 
 So in the picture above, you can see the change in data retrieval requests and data updates to the API by the gateway. So in this example, seconds 1-5 will retrieve data from node 1 and seconds 6-10 will retrieve data from node 2.
