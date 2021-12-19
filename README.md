@@ -82,3 +82,7 @@ Digital 8 (Arduino Uno): RX (ESP8266)
   <img width="800" src="Images/303102.jpg" />
   <img width="800" src="client/Images/Screenshot_5.jpg" />
 </p>
+
+#
+
+##<i>If need help, feel free to contact us! MatthewBrandon21 / rellpa.</i>
